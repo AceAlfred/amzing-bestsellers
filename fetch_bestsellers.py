@@ -1,4 +1,3 @@
------ fetch_bestsellers.py -----
 # Requires: requests, beautifulsoup4
 # Optional: amazon-paapi (official) or custom signed requests
 
@@ -105,5 +104,6 @@ if __name__ == '__main__':
         time.sleep(1)
     generate_html(products, 'index.html')
     print('Wrote index.html with', len(products), 'products')
+
 
 
