@@ -1,4 +1,5 @@
 name: Update Amazon Bestsellers
+
 on:
   schedule:
     - cron: '0 8 * * *'  # run daily at 08:00 UTC
@@ -9,12 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: pip install requests beautifulsoup4
+
       - name: Run fetch script
         env:
           AMZ_ASSOC_TAG: ${{ secrets.AMZ_ASSOC_TAG }}
@@ -22,8 +26,9 @@ jobs:
           PA_ACCESS_KEY: ${{ secrets.PA_ACCESS_KEY }}
           PA_SECRET_KEY: ${{ secrets.PA_SECRET_KEY }}
         run: python fetch_bestsellers.py
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.amzing_auto }} 
           publish_dir: ./
