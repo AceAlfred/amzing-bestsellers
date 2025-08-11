@@ -151,6 +151,7 @@ if __name__ == '__main__':
             info = {'asin': asin, 'title': asin, 'img': None, 'url': f'https://www.amazon.se/dp/{asin}'}
         products.append(info)
         time.sleep(1)
-    generate_html(products, 'index2.html')
-    print('Wrote index2.html with', len(products), 'products')
+    generate_html(products, 'index.html')
+    print('Wrote index.html with', len(products), 'products')
+
 
