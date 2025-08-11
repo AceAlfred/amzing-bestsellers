@@ -64,7 +64,7 @@ def fetch_product_basic(asin):
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
-def generate_html(products, out_path='index2.html'):
+def generate_html(products, out_path='index.html'):
     css_styles = """
         body {
             font-family: Arial, sans-serif;
@@ -153,3 +153,4 @@ if __name__ == '__main__':
         time.sleep(1)
     generate_html(products, 'index2.html')
     print('Wrote index2.html with', len(products), 'products')
+
