@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Top 10 - Sverige</title>
+    <title>Bästsäljare på Amazon</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,36 +11,46 @@
             background-color: #fff;
             color: #0f1111;
         }
-        h1 {
-            text-align: center;
-            font-size: 1.5em;
-            padding: 1em 0;
+        header {
             background-color: #232f3e;
             color: white;
+            text-align: center;
+            padding: 1.5em 1em;
+        }
+        header h1 {
             margin: 0;
+            font-size: 1.8em;
+        }
+        header p {
+            margin: 0.5em 0 0;
+            font-size: 1em;
         }
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 1em;
         }
         .product {
-            width: 100%;
-            max-width: 360px;
-            border-bottom: 1px solid #ddd;
-            padding: 1em 0;
+            flex: 1 1 18%;
+            box-sizing: border-box;
+            max-width: 220px;
+            margin: 10px;
             text-align: center;
+            border: 1px solid #ddd;
+            padding: 1em;
+            border-radius: 8px;
+            background-color: #f9f9f9;
         }
         .product img {
             width: 100%;
-            max-width: 300px;
             height: auto;
             margin-bottom: 0.5em;
         }
         .product h2 {
             font-size: 1em;
             margin: 0.5em 0;
+            word-wrap: break-word;
         }
         .product a {
             text-decoration: none;
@@ -52,116 +62,21 @@
             color: #b12704;
             margin-top: 0.5em;
         }
+        @media (max-width: 768px) {
+            .product {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Amazon Top 10 - Sverige</h1>
+    <header>
+        <h1>Bästsäljare på Amazon</h1>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
+    </header>
     <div class="container">
-        
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>        
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>      
-
-        <div class="product">
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/EXEMPEL.jpg" alt="Produktnamn">
-            </a>
-            <a href="https://www.amazon.se/dp/PRODUKT_ID?tag=AMZ_ASSOC_TAG" target="_blank">
-                <h2>Produktnamn</h2>
-            </a>
-            <div class="price">299 kr</div>
-        </div>        
-        
-        <!-- Kopiera .product blocket för fler produkter -->
-        
+        <!-- Product blocks go here -->
     </div>
 </body>
 </html>
-
-
-
