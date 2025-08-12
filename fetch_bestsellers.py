@@ -79,9 +79,6 @@ def fetch_product_basic(asin):
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
-def slugify(text):
-    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
-
 def generate_html(products_by_category, out_path='index.html'):
     css_styles = """
     body {
@@ -89,40 +86,30 @@ def generate_html(products_by_category, out_path='index.html'):
         margin: 0;
         background-color: #ffffff;
         color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     header {
         background-color: #000000;
         color: #ffffff;
         padding: 20px;
         text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+        width: 100%;
     }
     header h1 {
         margin: 0;
         font-size: 2em;
     }
     header p {
-        margin: 5px 0 10px;
+        margin: 5px 0 0;
         font-size: 1.1em;
-    }
-    nav {
-        margin-top: 10px;
-    }
-    nav a {
-        margin: 0 10px;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    nav a:hover {
-        text-decoration: underline;
     }
     section {
         padding: 20px;
         max-width: 1200px;
-        margin: auto;
+        width: 100%;
+        box-sizing: border-box;
     }
     section h2 {
         color: #000000;
@@ -171,7 +158,7 @@ def generate_html(products_by_category, out_path='index.html'):
             padding: 10px;
         }
     }
-    """
+"""
 
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f"""<!DOCTYPE html>
@@ -186,18 +173,10 @@ def generate_html(products_by_category, out_path='index.html'):
     <header>
         <h1>Bästsäljare på Amazon</h1>
         <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
-        <nav>
-""")
-        for category in products_by_category:
-            anchor = slugify(category)
-            f.write(f'            <a href="#{anchor}">{category}</a>
-')
-        f.write("""        </nav>
     </header>
 """)
         for category, products in products_by_category.items():
-            anchor = slugify(category)
-            f.write(f"""    <section id="{anchor}">
+            f.write(f"""    <section>
         <h2>{category}</h2>
         <div class="container">
 """)
@@ -211,12 +190,9 @@ def generate_html(products_by_category, out_path='index.html'):
                 <div class="price"></div>
             </div>
 """)
-            f.write("        </div>
-    </section>
-")
-        f.write("</body>
-</html>")
-
+        f.write("        </div>\n")
+        f.write("    </section>\n")
+        f.write("</body>\n</html>")
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
@@ -233,3 +209,6 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
+
+
