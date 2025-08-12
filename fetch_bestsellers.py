@@ -168,26 +168,23 @@ def generate_html(products_by_category, out_path='index.html'):
         <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
     </header>
 """)
-        for category, products in products_by_category.items():
-    f.write(f"""<section>
-<h2>{category}</h2>
-<div class='container'>
+         for category, products in products_by_category.items():
+            f.write(f"""    <section>
+        <h2>{category}</h2>
+        <div class="container">
 """)
-    for p in products:
-        img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
-        f.write(f"""<div class="product">
-    <a href="{build_affiliate_link(p['asin'])}" target="_blank">
-        {img_html}
-        <h3>{p['title']}</h3>
-    </a>
-    <div class="price"></div>
-</div>
+            for p in products:
+                img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
+                f.write(f"""            <div class="product">
+                <a href="{build_affiliate_link(p['asin'])}" target="_blank">
+                    {img_html}
+                    <h3>{p['title']}</h3>
+                </a>
+                <div class="price"></div>
+            </div>
 """)
-    f.write("</div>\n</section>\n")
-
-""")
-            f.write("</div>
-</section>
+            f.write("        </div>
+    </section>
 ")
         f.write("</body>
 </html>")
@@ -208,4 +205,3 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 10 products per category.')
-
