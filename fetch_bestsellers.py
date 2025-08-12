@@ -179,12 +179,9 @@ def generate_html(products_by_category, out_path='index.html'):
                 <div class="price"></div>
             </div>
 """)
-            f.write("        </div>\n")
-    </section>
-")
-        f.write("</body>
-</html>")
-
+        f.write("        </div>\n")
+        f.write("    </section>\n")
+        f.write("</body></html>")
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
