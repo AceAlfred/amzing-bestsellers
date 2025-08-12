@@ -1,11 +1,23 @@
-# Requires: requests, beautifulsoup4
 import os
 import re
 import time
 import requests
 from bs4 import BeautifulSoup
 
-AMAZON_BESTSELLERS_URL = 'https://www.amazon.se/gp/bestsellers'
+# Define categories and their Amazon.se bestseller URLs
+CATEGORIES = {
+    "Beauty & Personal Care": "https://www.amazon.se/gp/bestsellers/beauty",
+    "Home & Kitchen": "https://www.amazon.se/gp/bestsellers/home",
+    "Clothing, Shoes & Jewelry": "https://www.amazon.se/gp/bestsellers/fashion",
+    "Electronics": "https://www.amazon.se/gp/bestsellers/electronics",
+    "Toys & Games": "https://www.amazon.se/gp/bestsellers/toys",
+    "Books": "https://www.amazon.se/gp/bestsellers/books",
+    "Sports & Outdoors": "https://www.amazon.se/gp/bestsellers/sports",
+    "Health & Household": "https://www.amazon.se/gp/bestsellers/hpc",
+    "Tools & Home Improvement": "https://www.amazon.se/gp/bestsellers/hi",
+    "Pet Supplies": "https://www.amazon.se/gp/bestsellers/pet-supplies"
+}
+
 ASSOCIATE_TAG = 'amzing2025-21'#os.getenv('AMZ_ASSOC_TAG') or os.getenv('PA_TAG', '')
 PAAPI_ENABLED = os.getenv('PAAPI_ENABLED', 'false').lower() in ('1','true')
 PA_ACCESS_KEY = os.getenv('PA_ACCESS_KEY','')
@@ -21,12 +33,15 @@ HEADERS = {
 session = requests.Session()
 session.headers.update(HEADERS)
 
-def get_top_asins(limit=10):
-    """Scrape Amazon.se Bestsellers page and pull first unique ASINs."""
-    r = session.get(AMAZON_BESTSELLERS_URL, timeout=20)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, 'html.parser')
+def get_top_asins(url, limit=10):
+    try:
+        r = session.get(url, timeout=20)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"Failed to fetch category page: {url}", e)
+        return []
 
+    soup = BeautifulSoup(r.text, 'html.parser')
     asins = []
     for tag in soup.select('[data-asin]'):
         asin = tag.get('data-asin')
@@ -48,13 +63,19 @@ def get_top_asins(limit=10):
     return asins[:limit]
 
 def fetch_product_basic(asin):
-    """Get title and image from product page (lightweight)."""
     url = f'https://www.amazon.se/dp/{asin}'
-    r = session.get(url, timeout=20)
-    r.raise_for_status()
+    try:
+        r = session.get(url, timeout=20)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"Failed to fetch product page: {url}", e)
+        return None
+
     soup = BeautifulSoup(r.text, 'html.parser')
     title_tag = soup.find(id='productTitle') or soup.find('span', class_='a-size-large')
     title = title_tag.get_text(strip=True) if title_tag else asin
+    if 'gift card' in title.lower() or 'presentkort' in title.lower():
+        return None
     img = None
     img_tag = soup.find(id='landingImage') or soup.select_one('#imgTagWrapperId img')
     if img_tag and img_tag.get('src'):
@@ -64,7 +85,7 @@ def fetch_product_basic(asin):
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
-def generate_html(products, out_path='index.html'):
+def generate_html(products_by_category, out_path='index.html'):
     css_styles = """
         body {
             font-family: Arial, sans-serif;
@@ -75,6 +96,10 @@ def generate_html(products, out_path='index.html'):
         h1 {
             text-align: center;
             margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #0073bb;
         }
         .product {
             border: 1px solid #ddd;
@@ -114,54 +139,42 @@ def generate_html(products, out_path='index.html'):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Top 10 - Sverige</title>
+    <title>Amazon Top 10 per Category - Sverige</title>
     <style>{css_styles}</style>
 </head>
 <body>
-    <h1>Amazon Top 10 - Sverige</h1>
-    <div class="container">
+    <h1>Amazon Top 10 per Category - Sverige</h1>
 """)
-        for p in products:
-            if not p.get('img'):
-                p['img'] = ''
-            f.write(f"""
-        <div class="product">
+        for category, products in products_by_category.items():
+            f.write(f"<h2>{category}</h2>\n<div class='container'>\n")
+            for p in products:
+                img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
+                f.write(f"""<div class="product">
             <a href="{build_affiliate_link(p['asin'])}" target="_blank">
-                <img src="{p['img']}" alt="{p['title']}">
+                {img_html}
             </a>
             <a href="{build_affiliate_link(p['asin'])}" target="_blank">
-                <h2>{p['title']}</h2>
+                <h3>{p['title']}</h3>
             </a>
             <div class="price"></div>
         </div>
 """)
-        f.write("""
-    </div>
-</body>
-</html>""")
+            f.write("</div>\n")
+        f.write("</body>\n</html>")
 
 if __name__ == '__main__':
-    asins = get_top_asins(20)  # Fetch more to allow filtering
-    products = []
-    for asin in asins:
-        try:
+    products_by_category = {}
+    for category, url in CATEGORIES.items():
+        print(f"Processing category: {category}")
+        asins = get_top_asins(url, limit=15)
+        products = []
+        for asin in asins:
             info = fetch_product_basic(asin)
-            title_lower = info['title'].lower()
-            if 'gift card' in title_lower or 'presentkort' in title_lower:
-                print(f"Skipping gift card: {info['title']}")
-                continue
-        except Exception as e:
-            print('Failed to fetch', asin, e)
-            info = {'asin': asin, 'title': asin, 'img': None, 'url': f'https://www.amazon.se/dp/{asin}'}
-        products.append(info)
-        if len(products) >= 10:
-            break
-        time.sleep(1)
-    generate_html(products, 'index.html')
-    print('Wrote index.html with', len(products), 'products')
-
-
-
-
-
-
+            if info:
+                products.append(info)
+            if len(products) >= 10:
+                break
+            time.sleep(1)
+        products_by_category[category] = products
+    generate_html(products_by_category, 'index.html')
+    print('Wrote index.html with top 10 products per category.')
