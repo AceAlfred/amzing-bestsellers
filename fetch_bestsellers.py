@@ -27,7 +27,7 @@ HEADERS = {
 session = requests.Session()
 session.headers.update(HEADERS)
 
-def get_top_asins(url, limit=10):
+def get_top_asins(url, limit=12):
     try:
         r = session.get(url, timeout=20)
         r.raise_for_status()
@@ -197,4 +197,5 @@ if __name__ == '__main__':
             time.sleep(1)
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
-    print('Wrote index.html with top 10 products per category.')
+    print('Wrote index.html with top 12 products per category.')
+
