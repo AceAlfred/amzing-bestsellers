@@ -84,11 +84,11 @@ def generate_html(products_by_category, out_path='index.html'):
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #fff0f5;
+            background-color: ffffff;
             color: #333;
         }
         header {
-            background-color: #ff69b4;
+            background-color: #ffffff;
             color: white;
             padding: 20px;
             text-align: center;
@@ -115,7 +115,7 @@ def generate_html(products_by_category, out_path='index.html'):
         }
         .product {
             background-color: white;
-            border: 1px solid #ffc0cb;
+            border: 1px solid ##ffffff;
             border-radius: 10px;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
             margin: 10px;
@@ -181,7 +181,7 @@ def generate_html(products_by_category, out_path='index.html'):
 """)
         f.write("        </div>\n")
         f.write("    </section>\n")
-        f.write("</body></html>")
+        f.write("</body>\n</html>")
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
