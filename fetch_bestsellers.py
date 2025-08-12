@@ -141,18 +141,26 @@ def generate_html(products, out_path='index.html'):
 </html>""")
 
 if __name__ == '__main__':
-    asins = get_top_asins(10)
+    asins = get_top_asins(20)  # Fetch more to allow filtering
     products = []
     for asin in asins:
         try:
             info = fetch_product_basic(asin)
+            title_lower = info['title'].lower()
+            if 'gift card' in title_lower or 'presentkort' in title_lower:
+                print(f"Skipping gift card: {info['title']}")
+                continue
         except Exception as e:
             print('Failed to fetch', asin, e)
             info = {'asin': asin, 'title': asin, 'img': None, 'url': f'https://www.amazon.se/dp/{asin}'}
         products.append(info)
+        if len(products) >= 10:
+            break
         time.sleep(1)
     generate_html(products, 'index.html')
     print('Wrote index.html with', len(products), 'products')
+
+
 
 
 
