@@ -179,7 +179,7 @@ def generate_html(products_by_category, out_path='index.html'):
                 <div class="price"></div>
             </div>
 """)
-            f.write("        </div>
+            f.write("        &lt;/div&gt;\n")
     </section>
 ")
         f.write("</body>
