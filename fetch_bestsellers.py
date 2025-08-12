@@ -7,14 +7,14 @@ from bs4 import BeautifulSoup
 # Define categories and their Amazon.se bestseller URLs
 CATEGORIES = {
     "Beauty & Personal Care": "https://www.amazon.se/gp/bestsellers/beauty",
-    "Home & Kitchen": "https://www.amazon.se/gp/bestsellers/home",
+    "Home & Kitchen": "https://www.amazon.se/gp/bestsellers/kitchen",
     "Clothing, Shoes & Jewelry": "https://www.amazon.se/gp/bestsellers/fashion",
     "Electronics": "https://www.amazon.se/gp/bestsellers/electronics",
     "Toys & Games": "https://www.amazon.se/gp/bestsellers/toys",
     "Books": "https://www.amazon.se/gp/bestsellers/books",
     "Sports & Outdoors": "https://www.amazon.se/gp/bestsellers/sports",
-    "Health & Household": "https://www.amazon.se/gp/bestsellers/hpc",
-    "Tools & Home Improvement": "https://www.amazon.se/gp/bestsellers/hi",
+    "Health & Household": "https://www.amazon.se/gp/bestsellers/health",
+    "Tools & Home Improvement": "https://www.amazon.se/gp/bestsellers/industrial",
     "Pet Supplies": "https://www.amazon.se/gp/bestsellers/pet-supplies"
 }
 
@@ -178,3 +178,4 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 10 products per category.')
+
