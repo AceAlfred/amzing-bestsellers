@@ -203,12 +203,13 @@ if __name__ == '__main__':
             info = fetch_product_basic(asin)
             if info:
                 products.append(info)
-            if len(products) >= 10:
+            if len(products) >= 12:
                 break
             time.sleep(1)
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
