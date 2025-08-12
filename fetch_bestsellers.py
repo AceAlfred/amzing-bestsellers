@@ -19,7 +19,6 @@ CATEGORIES = {
 }
 
 ASSOCIATE_TAG = 'amzing2025-21'
-
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
@@ -121,8 +120,7 @@ def generate_html(products_by_category, out_path='index.html'):
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
             margin: 10px;
             padding: 15px;
-            width: calc(20% - 20px);
-            box-sizing: border-box;
+            width: 200px;
             text-align: center;
         }
         .product img {
@@ -132,9 +130,8 @@ def generate_html(products_by_category, out_path='index.html'):
         }
         .product h3 {
             font-size: 1em;
-            margin: 10px 0;
+            margin: 0.5em 0;
             color: #c71585;
-            word-wrap: break-word;
         }
         .product a {
             text-decoration: none;
@@ -144,11 +141,10 @@ def generate_html(products_by_category, out_path='index.html'):
             font-size: 1.1em;
             font-weight: bold;
             color: #b12704;
-            margin-top: 5px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .product {
-                width: 100%;
+                width: 90%;
             }
         }
     """
@@ -168,7 +164,7 @@ def generate_html(products_by_category, out_path='index.html'):
         <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
     </header>
 """)
-         for category, products in products_by_category.items():
+        for category, products in products_by_category.items():
             f.write(f"""    <section>
         <h2>{category}</h2>
         <div class="container">
