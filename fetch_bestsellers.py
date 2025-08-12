@@ -80,85 +80,74 @@ def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
 def generate_html(products_by_category, out_path='index.html'):
-css_styles = """
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #ffffff;
-        color: #000000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    header {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-    }
-    header h1 {
-        margin: 0;
-        font-size: 2em;
-    }
-    header p {
-        margin: 5px 0 0;
-        font-size: 1.1em;
-    }
-    section {
-        padding: 20px;
-        max-width: 1200px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    section h2 {
-        color: #000000;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .product {
-        background-color: #f9f9f9;
-        border: 1px solid #000000;
-        border-radius: 10px;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-        margin: 10px;
-        padding: 15px;
-        width: 200px;
-        text-align: center;
-    }
-    .product img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-    .product h3 {
-        font-size: 1em;
-        margin: 0.5em 0;
-        color: #000000;
-    }
-    .product a {
-        text-decoration: none;
-        color: #000000;
-    }
-    .price {
-        font-size: 1.1em;
-        font-weight: bold;
-        color: #000000;
-    }
-    @media (max-width: 600px) {
-        .product {
-            width: 90%;
+    css_styles = """
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: ffffff;
+            color: #333;
+        }
+        header {
+            background-color: #ffffff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
         }
         section {
-            padding: 10px;
+            padding: 20px;
         }
-    }
-"""
+        section h2 {
+            color: #c71585;
+            margin-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid ##ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            font-size: 1em;
+            margin: 0.5em 0;
+            color: #c71585;
+        }
+        .product a {
+            text-decoration: none;
+            color: #c71585;
+        }
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #b12704;
+        }
+        @media (max-width: 600px) {
+            .product {
+                width: 90%;
+            }
+        }
+    """
 
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f"""<!DOCTYPE html>
@@ -171,9 +160,8 @@ css_styles = """
 </head>
 <body>
     <header>
-        <h1>Amzing.net</h1>
-        <p>Bästsäljare på Amazon.</p>
-        <p>De populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
+        <h1>Bästsäljare på Amazon</h1>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
     </header>
 """)
         for category, products in products_by_category.items():
@@ -193,7 +181,7 @@ css_styles = """
 """)
         f.write("        </div>\n")
         f.write("    </section>\n")
-        f.write("</body></html>")
+        f.write("</body>\n</html>")
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
@@ -210,6 +198,3 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 10 products per category.')
-
-
-
