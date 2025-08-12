@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 AMAZON_BESTSELLERS_URL = 'https://www.amazon.se/gp/bestsellers'
-ASSOCIATE_TAG = os.getenv('AMZ_ASSOC_TAG', 'PA_TAG')
+ASSOCIATE_TAG = os.getenv('AMZ_ASSOC_TAG') or os.getenv('PA_TAG', '')
 PAAPI_ENABLED = os.getenv('PAAPI_ENABLED', 'false').lower() in ('1','true')
 PA_ACCESS_KEY = os.getenv('PA_ACCESS_KEY','')
 PA_SECRET_KEY = os.getenv('PA_SECRET_KEY','')
@@ -153,5 +153,6 @@ if __name__ == '__main__':
         time.sleep(1)
     generate_html(products, 'index.html')
     print('Wrote index.html with', len(products), 'products')
+
 
 
