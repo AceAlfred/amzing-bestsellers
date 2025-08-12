@@ -115,6 +115,7 @@ def generate_html(products_by_category, out_path='index.html'):
         color: #000000;
         margin-bottom: 10px;
         text-align: center;
+        background-color: #D3D3D3;
     }
     .container {
         display: flex;
@@ -209,7 +210,6 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
-
 
 
 
