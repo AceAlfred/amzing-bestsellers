@@ -80,7 +80,7 @@ def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
 def generate_html(products_by_category, out_path='index.html'):
-css_styles = """
+    css_styles = """
     body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -209,5 +209,6 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
