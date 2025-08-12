@@ -159,6 +159,7 @@ css_styles = """
         }
     }
 """
+
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f"""<!DOCTYPE html>
 <html lang="sv">
@@ -209,5 +210,6 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 10 products per category.')
+
 
 
