@@ -1,3 +1,4 @@
+
 import os
 import re
 import time
@@ -27,7 +28,7 @@ HEADERS = {
 session = requests.Session()
 session.headers.update(HEADERS)
 
-def get_top_asins(url, limit=12):
+def get_top_asins(url, limit=15):
     try:
         r = session.get(url, timeout=20)
         r.raise_for_status()
@@ -86,35 +87,53 @@ def generate_html(products_by_category, out_path='index.html'):
         margin: 0;
         background-color: #ffffff;
         color: #000000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     header {
         background-color: #000000;
         color: #ffffff;
         padding: 20px;
         text-align: center;
-        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
     header h1 {
         margin: 0;
         font-size: 2em;
     }
     header p {
-        margin: 5px 0 0;
+        margin: 5px 0 10px;
         font-size: 1.1em;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 0 10px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a.active {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
     section {
         padding: 20px;
         max-width: 1200px;
-        width: 100%;
-        box-sizing: border-box;
+        margin: auto;
+        scroll-margin-top: 120px;
     }
     section h2 {
-        color: #000000;
-        margin-bottom: 10px;
+        font-size: 2em;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-bottom: 20px;
         background-color: #D3D3D3;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
         text-align: center;
     }
     .container {
@@ -159,7 +178,29 @@ def generate_html(products_by_category, out_path='index.html'):
             padding: 10px;
         }
     }
-"""
+    """
+
+    js_script = """
+    <script>
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        let currentId = '';
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 120 && rect.bottom >= 120) {
+                currentId = section.id;
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            }
+        });
+    });
+    </script>
+    """
 
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f"""<!DOCTYPE html>
@@ -173,11 +214,19 @@ def generate_html(products_by_category, out_path='index.html'):
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
-        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
+        <p>Våra populäraste produkter baserat på försäljning. Scrolla ner för fler kategorier.</p>
+        <nav>
+""")
+        for category in products_by_category:
+            section_id = re.sub(r'[^a-zA-Z0-9]', '-', category.lower())
+            f.write(f'            <a href="#{section_id}">{category}</a>
+')
+        f.write("""        </nav>
     </header>
 """)
         for category, products in products_by_category.items():
-            f.write(f"""    <section>
+            section_id = re.sub(r'[^a-zA-Z0-9]', '-', category.lower())
+            f.write(f"""    <section id="{section_id}">
         <h2>{category}</h2>
         <div class="container">
 """)
@@ -191,9 +240,12 @@ def generate_html(products_by_category, out_path='index.html'):
                 <div class="price"></div>
             </div>
 """)
-        f.write("        </div>\n")
-        f.write("    </section>\n")
-        f.write("</body>\n</html>")
+            f.write("        </div>
+    </section>
+")
+        f.write(f"{js_script}</body>
+</html>")
+
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
@@ -210,7 +262,3 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
-
-
-
-
