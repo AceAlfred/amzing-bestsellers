@@ -165,6 +165,38 @@ def generate_html(products_by_category, out_path='index.html'):
         f.write(f"""<!DOCTYPE html>
 <html lang="sv">
 <head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .product {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  .product img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .product {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bästsäljare på Amazon</title>
@@ -210,6 +242,5 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
-
 
 
