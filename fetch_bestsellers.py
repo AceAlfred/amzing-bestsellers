@@ -131,13 +131,11 @@ def generate_html(products_by_category, out_path='index.html'):
         padding: 15px;
         width: 200px;
         text-align: center;
-        box-sizing: border-box;
     }
     .product img {
         max-width: 100%;
         height: auto;
         margin-bottom: 10px;
-        display: block;
     }
     .product h3 {
         font-size: 1em;
@@ -154,13 +152,8 @@ def generate_html(products_by_category, out_path='index.html'):
         color: #000000;
     }
     @media (max-width: 600px) {
-        .container {
-            flex-direction: column;
-            align-items: center;
-        }
         .product {
-            width: 100%;
-            max-width: 400px;
+            width: 90%;
         }
         section {
             padding: 10px;
