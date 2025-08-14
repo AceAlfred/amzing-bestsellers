@@ -212,4 +212,3 @@ if __name__ == '__main__':
     print('Wrote index.html with top 12 products per category.')
 
 
-
