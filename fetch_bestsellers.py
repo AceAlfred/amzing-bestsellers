@@ -81,84 +81,83 @@ def build_affiliate_link(asin):
 
 def generate_html(products_by_category, out_path='index.html'):
     css_styles = """
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Grid</title>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #ffffff;
-        color: #000000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
     }
-    header {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    header h1 {
-        margin: 0;
-        font-size: 2em;
+
+    .product-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
     }
-    header p {
-        margin: 5px 0 0;
-        font-size: 1.1em;
+
+    .product-card {
+      flex: 0 0 auto;
+      width: 45vw;
+      max-width: 180px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      scroll-snap-align: start;
+      background: #fff;
     }
-    section {
-        padding: 20px;
-        max-width: 1200px;
-        width: 100%;
-        box-sizing: border-box;
+
+    .product-card img {
+      width: 100%;
+      border-bottom: 1px solid #ddd;
     }
-    section h2 {
-        color: #000000;
-        margin-bottom: 10px;
-        text-align: center;
-        background-color: #D3D3D3;
+
+    .product-info {
+      padding: 10px;
     }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+
+    .product-info h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
     }
-    .product {
-        background-color: #f9f9f9;
-        border: 1px solid #000000;
-        border-radius: 10px;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-        margin: 10px;
-        padding: 15px;
-        width: 200px;
-        text-align: center;
+
+    .product-info p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
     }
-    .product img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
+
+    .product-scroll-container::-webkit-scrollbar {
+      display: none;
     }
-    .product h3 {
-        font-size: 1em;
-        margin: 0.5em 0;
-        color: #000000;
+    .product-scroll-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
-    .product a {
-        text-decoration: none;
-        color: #000000;
-    }
-    .price {
-        font-size: 1.1em;
-        font-weight: bold;
-        color: #000000;
-    }
-    @media (max-width: 600px) {
-        .product {
-            width: 90%;
-        }
-        section {
-            padding: 10px;
-        }
-    }
+  </style>
+</head>
+<body>
+
+<h2>Featured Products</h2>
+<div class="product-scroll-container">
+  {product_cards}
+</div>
+
+</body>
+</html>
+
 """
 
     with open(out_path, 'w', encoding='utf-8') as f:
@@ -210,5 +209,6 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
