@@ -146,21 +146,21 @@ body {
 </style>
 </head>
 <body>
-<div class="category-header">Electronics</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Books</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Fashion</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Home</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Beauty</div>
-<div class="product-scroll-container">
-</div>
+#<div class="category-header">Electronics</div>
+#<div class="product-scroll-container">
+#</div>
+#<div class="category-header">Books</div>
+#<div class="product-scroll-container">
+#</div>
+#<div class="category-header">Fashion</div>
+#<div class="product-scroll-container">
+#</div>
+#<div class="category-header">Home</div>
+#<div class="product-scroll-container">
+#</div>
+#<div class="category-header">Beauty</div>
+#<div class="product-scroll-container">
+#</div>
 
 </body>
 </html>
@@ -185,8 +185,10 @@ body {
 """)
         for category, products in products_by_category.items():
             f.write(f"""    <section>
-        <h2>{category}</h2>
+        <div class="category-header">{category}</div>
+        <div class="product-scroll-container">
         <div class="container">
+        </section>
 """)
             for p in products:
                 img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
@@ -217,6 +219,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
