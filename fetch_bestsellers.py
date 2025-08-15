@@ -85,73 +85,82 @@ def generate_html(products_by_category, out_path='index.html'):
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Grid</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .product-scroll-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding-bottom: 10px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .product-card {
-      flex: 0 0 auto;
-      width: 45vw;
-      max-width: 180px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      scroll-snap-align: start;
-      background: #fff;
-    }
-
-    .product-card img {
-      width: 100%;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .product-info {
-      padding: 10px;
-    }
-
-    .product-info h3 {
-      font-size: 16px;
-      margin: 0 0 5px;
-    }
-
-    .product-info p {
-      margin: 0;
-      font-size: 14px;
-      color: #333;
-    }
-
-    .product-scroll-container::-webkit-scrollbar {
-      display: none;
-    }
-    .product-scroll-container {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon.se Bestsellers</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.category-header {
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.product-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+.product-card {
+    flex: 0 0 auto;
+    width: 45vw;
+    max-width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    background: #fff;
+}
+.product-card img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.product-info {
+    padding: 10px;
+}
+.product-info h3 {
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+.product-info a {
+    text-decoration: none;
+    color: #333;
+}
+.product-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.product-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
 </head>
 <body>
+<div class="category-header">Electronics</div>
+<div class="product-scroll-container">
+</div>
+<div class="category-header">Books</div>
+<div class="product-scroll-container">
+</div>
+<div class="category-header">Fashion</div>
+<div class="product-scroll-container">
+</div>
+<div class="category-header">Home</div>
+<div class="product-scroll-container">
+</div>
+<div class="category-header">Beauty</div>
+<div class="product-scroll-container">
+</div>
 
 </body>
 </html>
+
 
 """
 
@@ -204,6 +213,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
