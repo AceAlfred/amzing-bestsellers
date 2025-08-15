@@ -150,11 +150,6 @@ def generate_html(products_by_category, out_path='index.html'):
 </head>
 <body>
 
-<h2>Featured Products</h2>
-<div class="product-scroll-container">
-  {product_cards}
-</div>
-
 </body>
 </html>
 
@@ -209,6 +204,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
