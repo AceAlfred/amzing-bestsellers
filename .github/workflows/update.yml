@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Install aiohttp  
+        run: pip install aiohttp beautifulsoup4
+
       - name: Run fetch script
         env:
           AMZ_ASSOC_TAG: ${{ secrets.AMZ_ASSOC_TAG }}
