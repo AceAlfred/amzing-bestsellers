@@ -112,11 +112,14 @@ body {
     flex: 0 0 auto;
     width: 45vw;
     max-width: 180px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 2px solid #aaa;
+    border-radius: 10px;
     scroll-snap-align: start;
     background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
+
 .product-card img {
     display: block;
     margin: auto;
@@ -124,9 +127,9 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-}
 .product-info {
     padding: 10px;
+    border-top: 1px solid #ddd;
 }
 .product-info h3 {
     font-size: 14px;
@@ -201,6 +204,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
