@@ -5,974 +5,1084 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bästsäljare på Amazon</title>
     <style>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon.se Bestsellers</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-.category-header {
-    background-color: #e0e0e0;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-.product-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-}
-.product-card {
-    flex: 0 0 auto;
-    width: 45vw;
-    max-width: 180px;
-    border: 2px solid #aaa;
-    border-radius: 10px;
-    scroll-snap-align: start;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.product-card img {
-    display: block;
-    margin: auto;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-}
-
-.product-info {
-    padding: 10px;
-    border-top: 1px solid #ddd;
-}
-.product-info h3 {
-    font-size: 14px;
-    margin: 0 0 5px;
-}
-.product-info a {
-    text-decoration: none;
-    color: #333;
-}
-.product-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-.product-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-</style>
-</head>
-</html>
-
-
-</style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .category-header {
+        background-color: #e0e0e0;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .product-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 10px;
+        scroll-snap-type: x mandatory;
+    }
+    .product-card {
+        flex: 0 0 auto;
+        width: 45vw;
+        max-width: 180px;
+        border: 2px solid #aaa;
+        border-radius: 10px;
+        scroll-snap-align: start;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .product-card img {
+        display: block;
+        margin: auto;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+    .product-info {
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
+    .product-info h3 {
+        font-size: 14px;
+        margin: 0 0 5px;
+    }
+    .product-info a {
+        text-decoration: none;
+        color: #333;
+    }
+    .product-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+    .product-scroll-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    </style>
 </head>
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
         <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
     </header>
-    <section>
-        <div class="category-header">Beauty & Personal Care</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B013OPOLXO/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71FtoWJuksL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BaByliss Näs- och Örontrimmer - Precisions 2-Bladssystem, Batteridrivet, Rostfritt Stål, Lätt att Rengöra, Avtagbara Tillbehör, Svart, E650E'>
-                    <h3>BaByliss Näs- och Örontrimmer - Precisions 2-Bladssystem, Batteridrivet, Rostfritt Stål, Lätt att Rengöra, Avtagbara Tillbehör, Svart, E650E</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00763ABGC/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41yqb3njjHL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Rexona Maximum Protection Antiperspirant Deo Stick för effektivt skydd mot kraftig svettning Confidence skyddar mot svett och dålig lukt i 96h 45 ml'>
-                    <h3>Rexona Maximum Protection Antiperspirant Deo Stick för effektivt skydd mot kraftig svettning Confidence skyddar mot svett och dålig lukt i 96h 45 ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00TH1ICEO/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81kKZqDDoML.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Gillette Fusion 5 Rakbladsrefiller För Män, 8 st, Med Antifriktionsblad För Upp Till 20 Rakningar Per Refill'>
-                    <h3>Gillette Fusion 5 Rakbladsrefiller För Män, 8 st, Med Antifriktionsblad För Upp Till 20 Rakningar Per Refill</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CC6KWFJZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/715zwgoR8oL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PORTENTUM 8st professionella nagelfiler, 100/180 dubbelsidiga tvättbara filer, fil naglar idealiska för gel och akryl, användning i salong och hem'>
-                    <h3>PORTENTUM 8st professionella nagelfiler, 100/180 dubbelsidiga tvättbara filer, fil naglar idealiska för gel och akryl, användning i salong och hem</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08JW4QBSL/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71EuKf1D9CL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Philips Oneblade utbytbara bladpaket inklusive 2 utbytbara blad, Qp220/51 (Lime)'>
-                    <h3>Philips Oneblade utbytbara bladpaket inklusive 2 utbytbara blad, Qp220/51 (Lime)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0BV7M34VF/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61k0xaBm5HL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BULLDOG X302316700 Fuktkräm, 100 ml'>
-                    <h3>BULLDOG X302316700 Fuktkräm, 100 ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01KLXFBVI/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/717JDoe3nkL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140'>
-                    <h3>Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08KT2Z93D/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51lP01--ejL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kroppslotion med sheasmör, vanilj och kashmir, fuktgivande i 24 timmar'>
-                    <h3>Kroppslotion med sheasmör, vanilj och kashmir, fuktgivande i 24 timmar</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DK4Y2YP3/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61--2Q4DgwL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='celimax The Vita A Retinal Shot Tightening Booster | med retinal, matrixyl, ger mindre porer, rynkor och fina linjer, ger fastare hud, 15 ml'>
-                    <h3>celimax The Vita A Retinal Shot Tightening Booster | med retinal, matrixyl, ger mindre porer, rynkor och fina linjer, ger fastare hud, 15 ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CQHWV2QX/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71boajvCZpL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='L'Oréal Men Expert Herr Hydra Energy Duschgel, 1 l'>
-                    <h3>L'Oréal Men Expert Herr Hydra Energy Duschgel, 1 l</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08WR5CPNB/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51JGjgY-oQL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Maybelline New York, mascara, ger varje frans volym och längd, Lash Sensational Sky High, nyans: svart, 7,2 ml'>
-                    <h3>Maybelline New York, mascara, ger varje frans volym och längd, Lash Sensational Sky High, nyans: svart, 7,2 ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B06XTPX8B2/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/7112f36MrFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='KIKO Milano 3D Hydra Lipgloss 21 | Mjuka läppglans för en 3D-look'>
-                    <h3>KIKO Milano 3D Hydra Lipgloss 21 | Mjuka läppglans för en 3D-look</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Home & Kitchen</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CMPXJB1B/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71dDd7UFK6L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='GRIFEMA GE2002B-300 oljespray, 300 ml matoljespray fri BPA, olivoljespray för luftfritös, sallader, grillar'>
-                    <h3>GRIFEMA GE2002B-300 oljespray, 300 ml matoljespray fri BPA, olivoljespray för luftfritös, sallader, grillar</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08NDVTN5C/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41shiHPa3wL._SY445_SX342_QL70_ML2_.jpg' alt='GRIFEMA - GA2002, köksvåg med LCD-skärm, rostfritt stål, multifunktionell matvåg 5 kg/11 lbs, blå [Amazon Exclusive]'>
-                    <h3>GRIFEMA - GA2002, köksvåg med LCD-skärm, rostfritt stål, multifunktionell matvåg 5 kg/11 lbs, blå [Amazon Exclusive]</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07M8J529S/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51BXSWArREL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Philips Noppborttagare för Alla Kläder, Tar Bort Små Ludd, 2 Höjdinställningar, Batteridriven (2 Philips AA-batterier Ingår), 8 x 12,3 x 5,8 cm, Svart/Guld (GC026/80)'>
-                    <h3>Philips Noppborttagare för Alla Kläder, Tar Bort Små Ludd, 2 Höjdinställningar, Batteridriven (2 Philips AA-batterier Ingår), 8 x 12,3 x 5,8 cm, Svart/Guld (GC026/80)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01N9XBDTI/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51Us-9pgd5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PHILIPS HD2581/90 Brödrost, Svart, 18.8 x 27.5 x 15.6 cm'>
-                    <h3>PHILIPS HD2581/90 Brödrost, Svart, 18.8 x 27.5 x 15.6 cm</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0BVRFSY79/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71MciS+LEiL._AC_SY300_SX300_.jpg' alt='Oeko TEX-certifierat vattentätt madrasskydd 180x200 cm från Twinzen - Alese 180x200 cm i ventilerande bomull med 4 elastiska hörn'>
-                    <h3>Oeko TEX-certifierat vattentätt madrasskydd 180x200 cm från Twinzen - Alese 180x200 cm i ventilerande bomull med 4 elastiska hörn</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07WKKS4HB/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61I0I4jmnFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='DOQAUS Kötttermometer Digital, 3s omedelbar läsning Matlagningstermometer, Vikbar Sond Grilltermometer med Hög Noggrannhet, Bakgrundsbelysning LCD-skärm, Automatisk på/av för Kök, Grill, Mjölk (svart)'>
-                    <h3>DOQAUS Kötttermometer Digital, 3s omedelbar läsning Matlagningstermometer, Vikbar Sond Grilltermometer med Hög Noggrannhet, Bakgrundsbelysning LCD-skärm, Automatisk på/av för Kök, Grill, Mjölk (svart)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08K3KX59S/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61sfyjkdDvL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='COM-FOUR® Set med 3 skålar i rostfritt stål - salladsskål i 3 storlekar - blandningsskål 750/1 300/1 800 ml - skål i rostfritt stål för bakning och servering (3 delar - Ø 15,5/19/21,5 cm)'>
-                    <h3>COM-FOUR® Set med 3 skålar i rostfritt stål - salladsskål i 3 storlekar - blandningsskål 750/1 300/1 800 ml - skål i rostfritt stål för bakning och servering (3 delar - Ø 15,5/19/21,5 cm)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CJRPK6RM/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/91OSjz0z6UL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Abyssaly Självhäftande film möbler träutseende, möbelfolie självhäftande film, vintage självhäftande film trä, vattentät ränder tapet för möbler vägg dörr bord skåp kök dekorativ folie 44 cm x 600 cm'>
-                    <h3>Abyssaly Självhäftande film möbler träutseende, möbelfolie självhäftande film, vintage självhäftande film trä, vattentät ränder tapet för möbler vägg dörr bord skåp kök dekorativ folie 44 cm x 600 cm</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B088XC6VBZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71FCyWbpxXL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Electrolux Dammsugare Pure D8.2 PD82-8DB, Den tystaste dammsugaren i Sverige på bara 57 dB, Automatisk reglering mellan golv och matta, 55% Återvunnen plast, SmartMode teknik, Denim Blue'>
-                    <h3>Electrolux Dammsugare Pure D8.2 PD82-8DB, Den tystaste dammsugaren i Sverige på bara 57 dB, Automatisk reglering mellan golv och matta, 55% Återvunnen plast, SmartMode teknik, Denim Blue</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07G58SR4W/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81c5evHYbxL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Electrolux E201S Dammsugarpåsar S-bag Classic Long Performance, 4 påsar, Optimerar luftflödet med påsens tåliga syntetmaterial, Lämplig för många typer av dammsugare'>
-                    <h3>Electrolux E201S Dammsugarpåsar S-bag Classic Long Performance, 4 påsar, Optimerar luftflödet med påsens tåliga syntetmaterial, Lämplig för många typer av dammsugare</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07RSCPH4N/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61WuwsjhdYL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Amazon basics vakuumpåse för kläder med lufttät ventil och handpump – stor, 5-pack, dragkedja, transparent'>
-                    <h3>Amazon basics vakuumpåse för kläder med lufttät ventil och handpump – stor, 5-pack, dragkedja, transparent</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01E2IOZ1A/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71hCmDDjbnL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='HEKU 30490, 50 engångsmuggar, klar, 0,3 l, PP'>
-                    <h3>HEKU 30490, 50 engångsmuggar, klar, 0,3 l, PP</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Clothing, Shoes & Jewelry</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07G77GT35/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51x7OAMIgKL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Charles Wilson Rund Krage T-shirt Paket Med 5'>
-                    <h3>Charles Wilson Rund Krage T-shirt Paket Med 5</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DH3CZXNS/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51voTIq5GLL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Longchamp L Utdrag Väska Arrangör - Multi-Fick Filthandväska med Börsorganisatör och Plånbok Arrangör'>
-                    <h3>Longchamp L Utdrag Väska Arrangör - Multi-Fick Filthandväska med Börsorganisatör och Plånbok Arrangör</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D9QCX786/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71rfL7cFzdL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)'>
-                    <h3>Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B087JGF2MK/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51VIs6gwSEL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Joopin Solglasögon Herr Polariserade Retro Rektangulära Solglasögon UV400 Dam Spegel Stor Polarized Square Sunglasses for Men and Women för Utomhus Vandring Fiske Golf'>
-                    <h3>Joopin Solglasögon Herr Polariserade Retro Rektangulära Solglasögon UV400 Dam Spegel Stor Polarized Square Sunglasses for Men and Women för Utomhus Vandring Fiske Golf</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D6G31FLV/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81auPyutigL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='ZFSOCK Barnstrumpor Strumpor Barn Flickor : Sömlösa färgglada bomullsstrumpor med sneakers Roligt motiv Tecknade djur Enhörning Julklappsidéer 5 par'>
-                    <h3>ZFSOCK Barnstrumpor Strumpor Barn Flickor : Sömlösa färgglada bomullsstrumpor med sneakers Roligt motiv Tecknade djur Enhörning Julklappsidéer 5 par</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B082FXYSKL/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61kc4Cp-ydL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Fintie Plånbok Smal minimalistisk framficka Plånbok, RFID-Blockering Kreditkortshållare Kortfodral med ID-Fönster för Män Kvinnor (Brun)'>
-                    <h3>Fintie Plånbok Smal minimalistisk framficka Plånbok, RFID-Blockering Kreditkortshållare Kortfodral med ID-Fönster för Män Kvinnor (Brun)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B001BEAWZM/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/716vzeqa7ZL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Calvin Klein herr 3P Trunk Boxershorts (3-pack)'>
-                    <h3>Calvin Klein herr 3P Trunk Boxershorts (3-pack)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08MQBKVD6/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51qyfDB5GrL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Casio'>
-                    <h3>Casio</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DSG3SK64/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71v-Z0HKDpL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='NY Threads Lätta snabbtorkande sportshorts för män med fickor'>
-                    <h3>NY Threads Lätta snabbtorkande sportshorts för män med fickor</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07DTMG6MH/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/612ATA9z5dL.__AC_SX395_SY395_QL70_ML2_.jpg' alt='ECCO herr TERRACRUISE LTVandringsskor'>
-                    <h3>ECCO herr TERRACRUISE LTVandringsskor</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DFQ1L8B1/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81YC6d3mHUL.__AC_SX342_SY445_QL70_ML2_.jpg' alt='Minecraft Skolväska Set | Killar Skolväska Set | Gaming Ryggsäck 4 Delar Set | Killar Ryggsäck Set | One Size Svart'>
-                    <h3>Minecraft Skolväska Set | Killar Skolväska Set | Gaming Ryggsäck 4 Delar Set | Killar Ryggsäck Set | One Size Svart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B09JZFWJ3H/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/817IPEJnGhL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='DANSK ENDURANCE Boxershorts i vävd ekologisk bomull, bekväm passform, för män, 4-pack och 6-pack'>
-                    <h3>DANSK ENDURANCE Boxershorts i vävd ekologisk bomull, bekväm passform, för män, 4-pack och 6-pack</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Electronics</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B09MQ4KZ27/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41xx-qCJxLL._SY445_SX342_QL70_ML2_.jpg' alt='INIU USB C till USB C Kabel [2M/100W], PD&QC 4.0 USB-C Snabbladdningskabel, Nylonflätad Mobilladdare för iPhone 16/15 Pro Max Samsung Galaxy S24/S23/S22 A55/A35 iPad Air 6/Mini 5 MacBook Huawei Xiaomi'>
-                    <h3>INIU USB C till USB C Kabel [2M/100W], PD&QC 4.0 USB-C Snabbladdningskabel, Nylonflätad Mobilladdare för iPhone 16/15 Pro Max Samsung Galaxy S24/S23/S22 A55/A35 iPad Air 6/Mini 5 MacBook Huawei Xiaomi</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B7NTY2S6/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71HMMAm+TlL._AC_SY300_SX300_.jpg' alt='SanDisk Ultra 128GB microSDXC kort + SD-adapter, för Android-smartphones och surfplattor, upp till 140 MB/s, med A1 App Prestanda, UHS-I, Kort 10, U1'>
-                    <h3>SanDisk Ultra 128GB microSDXC kort + SD-adapter, för Android-smartphones och surfplattor, upp till 140 MB/s, med A1 App Prestanda, UHS-I, Kort 10, U1</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DSHBM2PS/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51tITWLlLuL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='RSH Air Tracker-taggar 1-pack bagagespårningsetiketter fungerar med Hitta min enhet App, Bluetooth-spårare, nyckelhittare och artikellokalisering för bagage, ryggsäck, resväskor, utbytbart batteri'>
-                    <h3>RSH Air Tracker-taggar 1-pack bagagespårningsetiketter fungerar med Hitta min enhet App, Bluetooth-spårare, nyckelhittare och artikellokalisering för bagage, ryggsäck, resväskor, utbytbart batteri</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0000C73CQ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61cpxtAOkFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='instax mini film, 20 pack'>
-                    <h3>instax mini film, 20 pack</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00019RA8U/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81GYRhRbSIL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='CR2032 Batteri - 5-pack - Knappcell Litium Batterier 3V- GP Batteries'>
-                    <h3>CR2032 Batteri - 5-pack - Knappcell Litium Batterier 3V- GP Batteries</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08VD632WJ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71Rbwz4CaiL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='INIU 10000mAh Mini Power Bank, 22,5W PD3.0 QC4.0 Snabbladdning Extern Batteri, USB C in&out Bärbar Laddare för iPhone 16 15 14 13 12 Pro Max iPad Air 6 Mini 5 Samsung Galaxy S24 S23 S22 Pixel Xiaomi'>
-                    <h3>INIU 10000mAh Mini Power Bank, 22,5W PD3.0 QC4.0 Snabbladdning Extern Batteri, USB C in&out Bärbar Laddare för iPhone 16 15 14 13 12 Pro Max iPad Air 6 Mini 5 Samsung Galaxy S24 S23 S22 Pixel Xiaomi</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B1JNDZ5J/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81bssiCW7TL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Kingston DataTraveler Exodia M USB 3.2 Gen 1 DTXM/64GB – med rörligt lock (svart + blå)'>
-                    <h3>Kingston DataTraveler Exodia M USB 3.2 Gen 1 DTXM/64GB – med rörligt lock (svart + blå)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D8J688ZJ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51wQ5NViZ7L.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Snabbladdare 25 W för iPhone 14 13 12 11 Pro Max Plus SE Mini Xr X XS USB C 2 m snabbladdningskabel Strömadapter'>
-                    <h3>Snabbladdare 25 W för iPhone 14 13 12 11 Pro Max Plus SE Mini Xr X XS USB C 2 m snabbladdningskabel Strömadapter</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B9C4DKKG/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71ByVZ1x2vL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='SSD M.2 (2280) 2TB Samsung 990 PRO (PCIe/NVMe)'>
-                    <h3>SSD M.2 (2280) 2TB Samsung 990 PRO (PCIe/NVMe)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B2PZ994V/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71gY9E+cTaS._AC_SX342_SY445_.jpg' alt='Apple AirTag 4-pack ​​​​​​​'>
-                    <h3>Apple AirTag 4-pack ​​​​​​​</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B2Q2QHGW/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71BbxmBwVnL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Apple AirTag ​​​​​​​'>
-                    <h3>Apple AirTag ​​​​​​​</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DCNWN8NZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51oMc4XRaaL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Apple EarPods (usb-c) ​​​​​​​'>
-                    <h3>Apple EarPods (usb-c) ​​​​​​​</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Toys & Games</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DHSBBV6R/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81Pw-AH0jJL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='LEGO Speed Champions Ferrari SF-24 F1 racerbil Byggmodell med leksaksbil för för barn, Lekset med 1 minifigur, Formel 1 present att samla för pojkar och flickor 77242'>
-                    <h3>LEGO Speed Champions Ferrari SF-24 F1 racerbil Byggmodell med leksaksbil för för barn, Lekset med 1 minifigur, Formel 1 present att samla för pojkar och flickor 77242</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07NBR59QV/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/612u9nPKXFL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Play-Doh 8-Pack Rainbow, giftfri modellera med 8 färger'>
-                    <h3>Play-Doh 8-Pack Rainbow, giftfri modellera med 8 färger</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00ZRD99C0/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71BFqKPjRBL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Oball Bright Starts 10340 Classic Flexibel leksak för barn i alla åldrar, Flerfärgad'>
-                    <h3>Oball Bright Starts 10340 Classic Flexibel leksak för barn i alla åldrar, Flerfärgad</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CPN359F7/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81I85BIpepL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Rainbocorns 92104G Plyschleksak, Ragamuffin (Fluffles), 21.5 cm'>
-                    <h3>Rainbocorns 92104G Plyschleksak, Ragamuffin (Fluffles), 21.5 cm</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B005I5M2F8/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71MrrNB7jCL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='UNO - Jeu avec 112 Cartes - Cartes Actions et Cartes Joker - Règles Personnalisables - De 2 à 10 Joueurs - Cadeau dès 7 Ans, W2087'>
-                    <h3>UNO - Jeu avec 112 Cartes - Cartes Actions et Cartes Joker - Règles Personnalisables - De 2 à 10 Joueurs - Cadeau dès 7 Ans, W2087</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B28G8W15/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71Jkdecy0ZL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vicloon svartvit babybok, baby mjuka böcker, vikbart mjukt tyg med hög kontrast Tyst bok för 6-12 månader och småbarn, främjar hjärnutveckling baby (svart)'>
-                    <h3>Vicloon svartvit babybok, baby mjuka böcker, vikbart mjukt tyg med hög kontrast Tyst bok för 6-12 månader och småbarn, främjar hjärnutveckling baby (svart)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D223H58T/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71a-hGgk0+L._AC_SY300_SX300_.jpg' alt='Karaokemaskin för barn, passar barn i åldern 3-12 år, karaokemaskin för barn med mikrofon, fin som present'>
-                    <h3>Karaokemaskin för barn, passar barn i åldern 3-12 år, karaokemaskin för barn med mikrofon, fin som present</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DWX7K4XZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61+WbCbUd8L._AC_SY300_SX300_.jpg' alt='Ainiv Sugkopp spinner leksaker, 3 st nyckelpiga fjäril söta djur badleksaker, roterande sugkoppsleksaker, baby spinner leksaker present till småbarn, barn, flickor, pojkar'>
-                    <h3>Ainiv Sugkopp spinner leksaker, 3 st nyckelpiga fjäril söta djur badleksaker, roterande sugkoppsleksaker, baby spinner leksaker present till småbarn, barn, flickor, pojkar</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B082J4H9D3/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71pM9dK7YML.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vault X 9-fickors Kortpärm med Dragkedja, 360 Kort, Premium Exo-Tec Album Material, 20 Sidmatade Sidor, Pärm för Samlarkortspel, Sportkort, TCG (Grön)'>
-                    <h3>Vault X 9-fickors Kortpärm med Dragkedja, 360 Kort, Premium Exo-Tec Album Material, 20 Sidmatade Sidor, Pärm för Samlarkortspel, Sportkort, TCG (Grön)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DLW6829Q/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81HTtIxGIQL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='HGRGHH Hantverk flicka 6 7 8 9 10 år, 5D diamantmålning nyckelring, pyssla din egen GEM-nyckelring, pysselset barn från 6 år, enhörning flicka presenter 6–12 år'>
-                    <h3>HGRGHH Hantverk flicka 6 7 8 9 10 år, 5D diamantmålning nyckelring, pyssla din egen GEM-nyckelring, pysselset barn från 6 år, enhörning flicka presenter 6–12 år</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CNGY3FBY/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81gOVRSCokL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='AQXONG 70 st Magnetiska byggleksaker Magnetiska byggstenar Leksaker Pedagogiska byggstenar Leksaker Byggleksaker för barn Lämpliga för 3+ pojkar och flickor'>
-                    <h3>AQXONG 70 st Magnetiska byggleksaker Magnetiska byggstenar Leksaker Pedagogiska byggstenar Leksaker Byggleksaker för barn Lämpliga för 3+ pojkar och flickor</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DWDRZQYB/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81A7LbrmDDL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='LEGO Minecraft Creeper Spelprydnad, Kreativa byggleksak med actionfigur för barn, Rolig present med dataspelstema, Rumsdekoration till spelrummet, Samlarobjekt för pojkar och flickor 21276'>
-                    <h3>LEGO Minecraft Creeper Spelprydnad, Kreativa byggleksak med actionfigur för barn, Rolig present med dataspelstema, Rumsdekoration till spelrummet, Samlarobjekt för pojkar och flickor 21276</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Books</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D4YLQRMP/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51XqmEHheYL._SX342_SY445_.jpg' alt='Cozy Friends: Coloring Book for Adults and Teens Featuring Super Cute Animal Characters with Easy and Simple Designs for Relaxation'>
-                    <h3>Cozy Friends: Coloring Book for Adults and Teens Featuring Super Cute Animal Characters with Easy and Simple Designs for Relaxation</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/0349439303/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51Bzd-JkwEL._SY445_SX342_.jpg' alt='Redeeming 6'>
-                    <h3>Redeeming 6</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/0349439257/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51oU9w62frL._SY445_SX342_.jpg' alt='Binding 13'>
-                    <h3>Binding 13</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/0349439273/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51YUYdUHIZL._SY445_SX342_.jpg' alt='Keeping 13'>
-                    <h3>Keeping 13</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/1529381002/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51K3GE9x-PL._SY445_SX342_.jpg' alt='The Ballad of Never After'>
-                    <h3>The Ballad of Never After</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/1529380944/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51waM0DT-GL._SY445_SX342_.jpg' alt='Once Upon a Broken Heart'>
-                    <h3>Once Upon a Broken Heart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/0349439281/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51WSTbRVc3L._SY445_SX342_.jpg' alt='Saving 6'>
-                    <h3>Saving 6</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0D55MQN2R/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51nnUDKN4QL._SX342_SY445_.jpg' alt='Fuzzy Hygge: Cute and Cozy Coloring Book for Adults & Teens Featuring Adorable Animals Characters for Stress Relief'>
-                    <h3>Fuzzy Hygge: Cute and Cozy Coloring Book for Adults & Teens Featuring Adorable Animals Characters for Stress Relief</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/1529399327/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/519zxqYmjeL._SY445_SX342_.jpg' alt='A Curse For True Love: the thrilling final book in the Once Upon a Broken Heart series: 3'>
-                    <h3>A Curse For True Love: the thrilling final book in the Once Upon a Broken Heart series: 3</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/9179856594/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61S6-OB-uiL._SY445_SX342_.jpg' alt='Lär dig skriva stora och små bokstäver'>
-                    <h3>Lär dig skriva stora och små bokstäver</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/0349439354/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/5147WcMxN3L._SY445_SX342_.jpg' alt='Taming 7'>
-                    <h3>Taming 7</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/139972861X/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/514q70qPIdL._SY445_SX342_.jpg' alt='Play Along'>
-                    <h3>Play Along</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Sports & Outdoors</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B089KRZSVR/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71ZLIQM-fhL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Ion8 Barn Stålflaska, 400 ml/13 oz, Läcksäker, Lätt att Öppna, Säkert Lås, Diskmaskinssäker, Vändbart Lock, Bärhandtag, Lätt att Rengöra, Hållbar, Metallflaska, Koldioxidneutral'>
-                    <h3>Ion8 Barn Stålflaska, 400 ml/13 oz, Läcksäker, Lätt att Öppna, Säkert Lås, Diskmaskinssäker, Vändbart Lock, Bärhandtag, Lätt att Rengöra, Hållbar, Metallflaska, Koldioxidneutral</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0C3YMHJ3R/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71cTmcXJ2+L._AC_SY300_SX300_.jpg' alt='GRIFEMA GA1201-12 stöldskydd cykellås med nyckel, kedjelås för cyklar, motorcyklar, skotrar, 120 cm, svart'>
-                    <h3>GRIFEMA GA1201-12 stöldskydd cykellås med nyckel, kedjelås för cyklar, motorcyklar, skotrar, 120 cm, svart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CHN3W617/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51uQ5c1MS5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Fitbit Unisex vuxen Charge 6 tracker'>
-                    <h3>Fitbit Unisex vuxen Charge 6 tracker</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07DYLZW1R/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71YL5+i25LL._AC_SY300_SX300_.jpg' alt='Super Sparrow Vattenflaska -350ml/500ml/620ml/750ml/1L - Rostfritt Stål Vattenflaska - Termos Standard Mun - Giftfri BPA-Fri - Perfekt Som Sportflaska - 2 Lock'>
-                    <h3>Super Sparrow Vattenflaska -350ml/500ml/620ml/750ml/1L - Rostfritt Stål Vattenflaska - Termos Standard Mun - Giftfri BPA-Fri - Perfekt Som Sportflaska - 2 Lock</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0C38XWJ5C/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61JEqRn8AaL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Hopprep – hopprep justerbart för män kvinnor barn – hopprep för träning fettförbränning träning hem eller gym personlig träning rep röd'>
-                    <h3>Hopprep – hopprep justerbart för män kvinnor barn – hopprep för träning fettförbränning träning hem eller gym personlig träning rep röd</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01LBI63WI/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71+GJlL0+AL._AC_SY300_SX300_.jpg' alt='Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm grå)'>
-                    <h3>Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm grå)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B009SLTSF0/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/714yCYCcnUL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PGA Tour 24 Air Flow övning golfboll'>
-                    <h3>PGA Tour 24 Air Flow övning golfboll</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CBPHGWJ2/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71cEdbO4RdL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc'>
-                    <h3>Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01C9NXXTK/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/810TvycKdjL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PROIRON Hantlar, neopren-hantelvikter på 1–10 kg, weights för hem gym, hantel för män och kvinnor, träning, tyngdlyftning, konditionsträning, som säljs i par eller i en uppsättning'>
-                    <h3>PROIRON Hantlar, neopren-hantelvikter på 1–10 kg, weights för hem gym, hantel för män och kvinnor, träning, tyngdlyftning, konditionsträning, som säljs i par eller i en uppsättning</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07GGL736F/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71id2SY3n8L.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Sveltus Massagerulle, vuxna, unisex, svart/orange, en storlek'>
-                    <h3>Sveltus Massagerulle, vuxna, unisex, svart/orange, en storlek</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DH8HYL4K/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71tSnoV2KKL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader'>
-                    <h3>PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B09J923TRV/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81TmxXVyQyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='EDCX 4 mm Polyester Paracord 550 (15, 30 och 50 m) – 4 mm typ III, rivsäker fallskärmslina för överlevnad Tillverkad av 100% polyester med 7 trådar | Solida färger'>
-                    <h3>EDCX 4 mm Polyester Paracord 550 (15, 30 och 50 m) – 4 mm typ III, rivsäker fallskärmslina för överlevnad Tillverkad av 100% polyester med 7 trådar | Solida färger</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Health & Household</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B09JS56L1T/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81XlbSrBvOL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='2025 Innovativ Sovmask för Män och Kvinnor, Ljusblockerande Ögonmask för Sömn, Tupplur, Meditation, Resa(Svart)'>
-                    <h3>2025 Innovativ Sovmask för Män och Kvinnor, Ljusblockerande Ögonmask för Sömn, Tupplur, Meditation, Resa(Svart)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0B4SCYCLS/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81IpkqhiqsL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Oral-B Vitality Pro Svart Eltandborste, 1 Borsthuvud, Designed By Braun'>
-                    <h3>Oral-B Vitality Pro Svart Eltandborste, 1 Borsthuvud, Designed By Braun</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07S9PTLNZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/21wW7Xf7Q+L._SX342_SY445_.jpg' alt='RENPHO personvåg, kroppsvåg med högprecisionssensorer, personlig digitalvåg med step-on-teknik, viktvåg av säkerhetsglas, svart'>
-                    <h3>RENPHO personvåg, kroppsvåg med högprecisionssensorer, personlig digitalvåg med step-on-teknik, viktvåg av säkerhetsglas, svart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B08KYXNCSY/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61tORmbUXGL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Finish Diskmaskinsrengöring Citron 250ml'>
-                    <h3>Finish Diskmaskinsrengöring Citron 250ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00RCK2JAU/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71H7IUqnonL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000'>
-                    <h3>20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CF28WQH3/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61QUNfBFbCL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kreatinmonohydrat 1kg pulver - 11 månaders förbrukning - 1000g veganskt mikroniserat kreatinpulver - 330 portioner - Fri från magnesiumstearat, gluten & laktos - WeightWorld'>
-                    <h3>Kreatinmonohydrat 1kg pulver - 11 månaders förbrukning - 1000g veganskt mikroniserat kreatinpulver - 330 portioner - Fri från magnesiumstearat, gluten & laktos - WeightWorld</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CN117XW3/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71Y39wpgZ5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='YES Diskmedel Original med en rik formula för skinande ren disk, effektivt avlägsnande av ingrodda matrester och fantastisk fruktig och blommig doft 1250ml'>
-                    <h3>YES Diskmedel Original med en rik formula för skinande ren disk, effektivt avlägsnande av ingrodda matrester och fantastisk fruktig och blommig doft 1250ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01N6QQGZJ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61R0710zCfL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BIOMED - Supervit tandkräm 100 g, naturlig mild blekning, lugnar känslighet och tandkött, återställer emalj, fri från fluor, SLS, PEG, sackarin och gluten, vegan, halal, kokossmak'>
-                    <h3>BIOMED - Supervit tandkräm 100 g, naturlig mild blekning, lugnar känslighet och tandkött, återställer emalj, fri från fluor, SLS, PEG, sackarin och gluten, vegan, halal, kokossmak</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07D4N472Q/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61Q7i-NDpRL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Isopropanol 99,9% spritalkohol 1000ml'>
-                    <h3>Isopropanol 99,9% spritalkohol 1000ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B015OMHL82/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81ovQWb2PML.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Regina 8004260458702 Toalettpapper, 16 rullar'>
-                    <h3>Regina 8004260458702 Toalettpapper, 16 rullar</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0FL3YPB6K/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81b1qra4dXL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='VIGOROUS Mellanrumsborstar ISO 2'>
-                    <h3>VIGOROUS Mellanrumsborstar ISO 2</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B079H6L89L/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61u22MWWR0L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PHILIPS Sonicare Original W2 Optimal White Standard soniska tandborsthuvuden – 4-enhetspaket i svart (modell HX6064/11)'>
-                    <h3>PHILIPS Sonicare Original W2 Optimal White Standard soniska tandborsthuvuden – 4-enhetspaket i svart (modell HX6064/11)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Tools & Home Improvement</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CR1DBBFN/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41Lmi5mwMGL._SY445_SX342_QL70_ML2_.jpg' alt='eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart'>
-                    <h3>eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07GC5T84Z/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61u2s50EV4L._SY445_SX342_QL70_ML2_.jpg' alt='S&R Slipskivor 125 mm Set - Sliprondeller 60 st, Slipapper korn 40/60/80/120/180/240 (10 st vardera), 8 hål, krok snabbmontering för slumpmässig Orbit slipmaskin, excentrisk slipmaskin'>
-                    <h3>S&R Slipskivor 125 mm Set - Sliprondeller 60 st, Slipapper korn 40/60/80/120/180/240 (10 st vardera), 8 hål, krok snabbmontering för slumpmässig Orbit slipmaskin, excentrisk slipmaskin</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0C9HRB1M5/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/81jBsKw3jzL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Officer PRODUCTS dragkedjepåse tryckförslutning 6 x 8 cm/100 stycken (1-pack)/transparent glasklar/tryckförslutningspåse zip set/dragkedjeväska/polypåse/tillverkad av fast LDPE-folie livsmedelssäker'>
-                    <h3>Officer PRODUCTS dragkedjepåse tryckförslutning 6 x 8 cm/100 stycken (1-pack)/transparent glasklar/tryckförslutningspåse zip set/dragkedjeväska/polypåse/tillverkad av fast LDPE-folie livsmedelssäker</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07FQDKR28/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61kT6QXpbFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart'>
-                    <h3>eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CJ621Q1R/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71yECJxwzUL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Double Dragon 100 st Blandade självförslutande brevväskor | Manipulationssäker plastförpackning för post, porto, frakt och leverans | 4 storlekar | Liten till stor | 25 var (Förpackning med 100)'>
-                    <h3>Double Dragon 100 st Blandade självförslutande brevväskor | Manipulationssäker plastförpackning för post, porto, frakt och leverans | 4 storlekar | Liten till stor | 25 var (Förpackning med 100)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B06X977K8L/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41j6AYLIu7L._SY445_SX342_QL70_ML2_.jpg' alt='Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft'>
-                    <h3>Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B09M8PFRWP/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/316lau9FkML._SY445_SX342_QL70_ML2_.jpg' alt='Newaner digitalt skjutmått på 150 mm/6 tum, digitalt kolfiber med klart Lcd och backup-batteri, professionell kaliper för utomhusbruk, inomhus, djup och stegmätning'>
-                    <h3>Newaner digitalt skjutmått på 150 mm/6 tum, digitalt kolfiber med klart Lcd och backup-batteri, professionell kaliper för utomhusbruk, inomhus, djup och stegmätning</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DM8ZQC23/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71SnH3FhbZL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='SOLEYIN Ultra PLA filament 1,75 mm ros, 3D-skrivarfilament 1 kg hög hastighet 30–300 mm/s miljövänlig, för de flesta 3D-skrivare, Creality Ender, K1 K1C K2 plus (nypon)'>
-                    <h3>SOLEYIN Ultra PLA filament 1,75 mm ros, 3D-skrivarfilament 1 kg hög hastighet 30–300 mm/s miljövänlig, för de flesta 3D-skrivare, Creality Ender, K1 K1C K2 plus (nypon)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DGX998KX/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/8185bvgf9zL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='SUNLU 4KG PLA+2.0 Filament, Uppgradera PLA Plus 3D Skrivarfilament, Starkare och mer Robust, 1KG per Spole, 4KG Totalt, Svart+Vit+Blå+Röd'>
-                    <h3>SUNLU 4KG PLA+2.0 Filament, Uppgradera PLA Plus 3D Skrivarfilament, Starkare och mer Robust, 1KG per Spole, 4KG Totalt, Svart+Vit+Blå+Röd</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0C6236N65/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71vVQ7WNEyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Finish Spolglans Shine & Dry 800ml'>
-                    <h3>Finish Spolglans Shine & Dry 800ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0CC1Y6SK1/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71uYFRgn6LL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Magrimaxio Postpåsar, fraktpåsar för kläder, förpackningspåsar i plast, med självhäftande stängning, ogenomskinliga, L, (25,5 × 33 cm (10 x 13 tum)), 100 stycken'>
-                    <h3>Magrimaxio Postpåsar, fraktpåsar för kläder, förpackningspåsar i plast, med självhäftande stängning, ogenomskinliga, L, (25,5 × 33 cm (10 x 13 tum)), 100 stycken</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0DDTGRRG2/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41H-EYMuxFL._SY445_SX342_QL70_ML2_.jpg' alt='eSUN PETG Filament 1.75mm, PETG Filament med Hög Seghet, 1KG Spole (2.2 LBS) 3D-Utskriftsfilament för 3D-Skrivare,Solid Vit'>
-                    <h3>eSUN PETG Filament 1.75mm, PETG Filament med Hög Seghet, 1KG Spole (2.2 LBS) 3D-Utskriftsfilament för 3D-Skrivare,Solid Vit</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-    <section>
-        <div class="category-header">Pet Supplies</div>
-        <div class="product-scroll-container">
-        <div class="container">
-        </section>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07CPK4T22/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71OSx90k62L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Biokat's Diamond Care Fresh med doft av babypuder - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)'>
-                    <h3>Biokat's Diamond Care Fresh med doft av babypuder - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0C1GG17WR/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/712YUZ0acyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)'>
-                    <h3>AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0819XVK92/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71hmdqmQb3L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='ACE2ACE Borttagningsrulle för Husdjurshår, Ateranvändbar Borste för Djurhårborttagning för Hundar och Katter, Lätt att Självrengöra Husdjurspälsen från Matta, Möbler, Kläder och Sängkläder, Soffa'>
-                    <h3>ACE2ACE Borttagningsrulle för Husdjurshår, Ateranvändbar Borste för Djurhårborttagning för Hundar och Katter, Lätt att Självrengöra Husdjurspälsen från Matta, Möbler, Kläder och Sängkläder, Soffa</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B00U7LCKZ0/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71jIOh89z6L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kaytee Clean & Cozy Strö med luktkontroll för smådjur som möss, ökenråttor, gnagare, hamster, kanin, superabsorberande pappersströ, 99,9% dammfritt, vitt, 85 liter'>
-                    <h3>Kaytee Clean & Cozy Strö med luktkontroll för smådjur som möss, ökenråttor, gnagare, hamster, kanin, superabsorberande pappersströ, 99,9% dammfritt, vitt, 85 liter</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B000LXUWN6/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61S6Xxk8YDL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Tetra AquaSafe Vattenberedningsmedel för Akvarier, 0,5 l'>
-                    <h3>Tetra AquaSafe Vattenberedningsmedel för Akvarier, 0,5 l</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B01MROLYGF/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/51h1jaCL1rL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Simple Solution Extreme Stain and Odour Remover for Cats, Enzymatic Cleaner with 3X Pro-Bacterial Cleansing Power - 750 ml'>
-                    <h3>Simple Solution Extreme Stain and Odour Remover for Cats, Enzymatic Cleaner with 3X Pro-Bacterial Cleansing Power - 750 ml</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B073V4SRBZ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61X1fZEnNlL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vet's Best Dental Care Finger Wipes, Reduces Plaque and Refreshes, Dental Cleaning Finger Wipes for Dogs and Cats - 50 Disposable Wipes'>
-                    <h3>Vet's Best Dental Care Finger Wipes, Reduces Plaque and Refreshes, Dental Cleaning Finger Wipes for Dogs and Cats - 50 Disposable Wipes</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0BPD587DQ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/91OwKrcKvcL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Whiskas 1+ kattmat Tasty Mix Chef's Choice i sås, 40 x 85 g (1-pack) – högkvalitativt våtfoder för vuxna katter i 40 portionspåsar'>
-                    <h3>Whiskas 1+ kattmat Tasty Mix Chef's Choice i sås, 40 x 85 g (1-pack) – högkvalitativt våtfoder för vuxna katter i 40 portionspåsar</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07CPDVRD9/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71BTCs+F4GL._AC_SY300_SX300_.jpg' alt='Biokat's Diamond Care Classic luktfritt - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)'>
-                    <h3>Biokat's Diamond Care Classic luktfritt - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B07349PHVG/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71EsBcI5XbL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='KERBL PET 2-in-1 Catch The Tail Feather 81666 Kattleksak, Grå, Gul, 70 x 53 x 5 cm'>
-                    <h3>KERBL PET 2-in-1 Catch The Tail Feather 81666 Kattleksak, Grå, Gul, 70 x 53 x 5 cm</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0009585SA/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61t0wfhx8dL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='TRIXIE 2373 Klosax, Blå, Svart, L, 8 cm'>
-                    <h3>TRIXIE 2373 Klosax, Blå, Svart, L, 8 cm</h3>
-                </a>
-                <div class="price"></div>
-            </div>
-            <div class="product">
-                <a href="https://www.amazon.se/dp/B0079F3ICQ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/712LJElq6eL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PURINA GOURMET guld fin pasta kattfoder vått, med kyckling, 12-pack (12 x 85 g)'>
-                    <h3>PURINA GOURMET guld fin pasta kattfoder vått, med kyckling, 12-pack (12 x 85 g)</h3>
-                </a>
-                <div class="price"></div>
-            </div>
+<section>
+    <div class="category-header">Beauty & Personal Care</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B013OPOLXO/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71FtoWJuksL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BaByliss Näs- och Örontrimmer - Precisions 2-Bladssystem, Batteridrivet, Rostfritt Stål, Lätt att Rengöra, Avtagbara Tillbehör, Svart, E650E'>
+        <div class="product-info">
+            <h3>BaByliss Näs- och Örontrimmer - Precisions 2-Bladssystem, Batteridrivet, Rostfritt Stål, Lätt att Rengöra, Avtagbara Tillbehör, Svart, E650E</h3>
         </div>
-    </section>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00763ABGC/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41yqb3njjHL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Rexona Maximum Protection Antiperspirant Deo Stick för effektivt skydd mot kraftig svettning Confidence skyddar mot svett och dålig lukt i 96h 45 ml'>
+        <div class="product-info">
+            <h3>Rexona Maximum Protection Antiperspirant Deo Stick för effektivt skydd mot kraftig svettning Confidence skyddar mot svett och dålig lukt i 96h 45 ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00TH1ICEO/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81kKZqDDoML.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Gillette Fusion 5 Rakbladsrefiller För Män, 8 st, Med Antifriktionsblad För Upp Till 20 Rakningar Per Refill'>
+        <div class="product-info">
+            <h3>Gillette Fusion 5 Rakbladsrefiller För Män, 8 st, Med Antifriktionsblad För Upp Till 20 Rakningar Per Refill</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CC6KWFJZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/715zwgoR8oL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PORTENTUM 8st professionella nagelfiler, 100/180 dubbelsidiga tvättbara filer, fil naglar idealiska för gel och akryl, användning i salong och hem'>
+        <div class="product-info">
+            <h3>PORTENTUM 8st professionella nagelfiler, 100/180 dubbelsidiga tvättbara filer, fil naglar idealiska för gel och akryl, användning i salong och hem</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08JW4QBSL/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71EuKf1D9CL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Philips Oneblade utbytbara bladpaket inklusive 2 utbytbara blad, Qp220/51 (Lime)'>
+        <div class="product-info">
+            <h3>Philips Oneblade utbytbara bladpaket inklusive 2 utbytbara blad, Qp220/51 (Lime)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0BV7M34VF/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61k0xaBm5HL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BULLDOG X302316700 Fuktkräm, 100 ml'>
+        <div class="product-info">
+            <h3>BULLDOG X302316700 Fuktkräm, 100 ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01KLXFBVI/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/717JDoe3nkL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140'>
+        <div class="product-info">
+            <h3>Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08KT2Z93D/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51lP01--ejL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kroppslotion med sheasmör, vanilj och kashmir, fuktgivande i 24 timmar'>
+        <div class="product-info">
+            <h3>Kroppslotion med sheasmör, vanilj och kashmir, fuktgivande i 24 timmar</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DK4Y2YP3/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61--2Q4DgwL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='celimax The Vita A Retinal Shot Tightening Booster | med retinal, matrixyl, ger mindre porer, rynkor och fina linjer, ger fastare hud, 15 ml'>
+        <div class="product-info">
+            <h3>celimax The Vita A Retinal Shot Tightening Booster | med retinal, matrixyl, ger mindre porer, rynkor och fina linjer, ger fastare hud, 15 ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CQHWV2QX/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71boajvCZpL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='L'Oréal Men Expert Herr Hydra Energy Duschgel, 1 l'>
+        <div class="product-info">
+            <h3>L'Oréal Men Expert Herr Hydra Energy Duschgel, 1 l</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08WR5CPNB/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51JGjgY-oQL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Maybelline New York, mascara, ger varje frans volym och längd, Lash Sensational Sky High, nyans: svart, 7,2 ml'>
+        <div class="product-info">
+            <h3>Maybelline New York, mascara, ger varje frans volym och längd, Lash Sensational Sky High, nyans: svart, 7,2 ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B06XTPX8B2/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/7112f36MrFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='KIKO Milano 3D Hydra Lipgloss 21 | Mjuka läppglans för en 3D-look'>
+        <div class="product-info">
+            <h3>KIKO Milano 3D Hydra Lipgloss 21 | Mjuka läppglans för en 3D-look</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Home & Kitchen</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CMPXJB1B/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71dDd7UFK6L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='GRIFEMA GE2002B-300 oljespray, 300 ml matoljespray fri BPA, olivoljespray för luftfritös, sallader, grillar'>
+        <div class="product-info">
+            <h3>GRIFEMA GE2002B-300 oljespray, 300 ml matoljespray fri BPA, olivoljespray för luftfritös, sallader, grillar</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08NDVTN5C/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41shiHPa3wL._SY445_SX342_QL70_ML2_.jpg' alt='GRIFEMA - GA2002, köksvåg med LCD-skärm, rostfritt stål, multifunktionell matvåg 5 kg/11 lbs, blå [Amazon Exclusive]'>
+        <div class="product-info">
+            <h3>GRIFEMA - GA2002, köksvåg med LCD-skärm, rostfritt stål, multifunktionell matvåg 5 kg/11 lbs, blå [Amazon Exclusive]</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07M8J529S/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51BXSWArREL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Philips Noppborttagare för Alla Kläder, Tar Bort Små Ludd, 2 Höjdinställningar, Batteridriven (2 Philips AA-batterier Ingår), 8 x 12,3 x 5,8 cm, Svart/Guld (GC026/80)'>
+        <div class="product-info">
+            <h3>Philips Noppborttagare för Alla Kläder, Tar Bort Små Ludd, 2 Höjdinställningar, Batteridriven (2 Philips AA-batterier Ingår), 8 x 12,3 x 5,8 cm, Svart/Guld (GC026/80)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01N9XBDTI/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51Us-9pgd5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PHILIPS HD2581/90 Brödrost, Svart, 18.8 x 27.5 x 15.6 cm'>
+        <div class="product-info">
+            <h3>PHILIPS HD2581/90 Brödrost, Svart, 18.8 x 27.5 x 15.6 cm</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0BVRFSY79/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71MciS+LEiL._AC_SY300_SX300_.jpg' alt='Oeko TEX-certifierat vattentätt madrasskydd 180x200 cm från Twinzen - Alese 180x200 cm i ventilerande bomull med 4 elastiska hörn'>
+        <div class="product-info">
+            <h3>Oeko TEX-certifierat vattentätt madrasskydd 180x200 cm från Twinzen - Alese 180x200 cm i ventilerande bomull med 4 elastiska hörn</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07WKKS4HB/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61I0I4jmnFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='DOQAUS Kötttermometer Digital, 3s omedelbar läsning Matlagningstermometer, Vikbar Sond Grilltermometer med Hög Noggrannhet, Bakgrundsbelysning LCD-skärm, Automatisk på/av för Kök, Grill, Mjölk (svart)'>
+        <div class="product-info">
+            <h3>DOQAUS Kötttermometer Digital, 3s omedelbar läsning Matlagningstermometer, Vikbar Sond Grilltermometer med Hög Noggrannhet, Bakgrundsbelysning LCD-skärm, Automatisk på/av för Kök, Grill, Mjölk (svart)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08K3KX59S/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61sfyjkdDvL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='COM-FOUR® Set med 3 skålar i rostfritt stål - salladsskål i 3 storlekar - blandningsskål 750/1 300/1 800 ml - skål i rostfritt stål för bakning och servering (3 delar - Ø 15,5/19/21,5 cm)'>
+        <div class="product-info">
+            <h3>COM-FOUR® Set med 3 skålar i rostfritt stål - salladsskål i 3 storlekar - blandningsskål 750/1 300/1 800 ml - skål i rostfritt stål för bakning och servering (3 delar - Ø 15,5/19/21,5 cm)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CJRPK6RM/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/91OSjz0z6UL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Abyssaly Självhäftande film möbler träutseende, möbelfolie självhäftande film, vintage självhäftande film trä, vattentät ränder tapet för möbler vägg dörr bord skåp kök dekorativ folie 44 cm x 600 cm'>
+        <div class="product-info">
+            <h3>Abyssaly Självhäftande film möbler träutseende, möbelfolie självhäftande film, vintage självhäftande film trä, vattentät ränder tapet för möbler vägg dörr bord skåp kök dekorativ folie 44 cm x 600 cm</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B088XC6VBZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71FCyWbpxXL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Electrolux Dammsugare Pure D8.2 PD82-8DB, Den tystaste dammsugaren i Sverige på bara 57 dB, Automatisk reglering mellan golv och matta, 55% Återvunnen plast, SmartMode teknik, Denim Blue'>
+        <div class="product-info">
+            <h3>Electrolux Dammsugare Pure D8.2 PD82-8DB, Den tystaste dammsugaren i Sverige på bara 57 dB, Automatisk reglering mellan golv och matta, 55% Återvunnen plast, SmartMode teknik, Denim Blue</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07G58SR4W/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81c5evHYbxL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Electrolux E201S Dammsugarpåsar S-bag Classic Long Performance, 4 påsar, Optimerar luftflödet med påsens tåliga syntetmaterial, Lämplig för många typer av dammsugare'>
+        <div class="product-info">
+            <h3>Electrolux E201S Dammsugarpåsar S-bag Classic Long Performance, 4 påsar, Optimerar luftflödet med påsens tåliga syntetmaterial, Lämplig för många typer av dammsugare</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07RSCPH4N/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61WuwsjhdYL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Amazon basics vakuumpåse för kläder med lufttät ventil och handpump – stor, 5-pack, dragkedja, transparent'>
+        <div class="product-info">
+            <h3>Amazon basics vakuumpåse för kläder med lufttät ventil och handpump – stor, 5-pack, dragkedja, transparent</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01E2IOZ1A/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71hCmDDjbnL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='HEKU 30490, 50 engångsmuggar, klar, 0,3 l, PP'>
+        <div class="product-info">
+            <h3>HEKU 30490, 50 engångsmuggar, klar, 0,3 l, PP</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Clothing, Shoes & Jewelry</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07G77GT35/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51x7OAMIgKL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Charles Wilson Rund Krage T-shirt Paket Med 5'>
+        <div class="product-info">
+            <h3>Charles Wilson Rund Krage T-shirt Paket Med 5</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DH3CZXNS/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51voTIq5GLL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Longchamp L Utdrag Väska Arrangör - Multi-Fick Filthandväska med Börsorganisatör och Plånbok Arrangör'>
+        <div class="product-info">
+            <h3>Longchamp L Utdrag Väska Arrangör - Multi-Fick Filthandväska med Börsorganisatör och Plånbok Arrangör</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D9QCX786/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71rfL7cFzdL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)'>
+        <div class="product-info">
+            <h3>Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B087JGF2MK/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51VIs6gwSEL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Joopin Solglasögon Herr Polariserade Retro Rektangulära Solglasögon UV400 Dam Spegel Stor Polarized Square Sunglasses for Men and Women för Utomhus Vandring Fiske Golf'>
+        <div class="product-info">
+            <h3>Joopin Solglasögon Herr Polariserade Retro Rektangulära Solglasögon UV400 Dam Spegel Stor Polarized Square Sunglasses for Men and Women för Utomhus Vandring Fiske Golf</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D6G31FLV/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81auPyutigL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='ZFSOCK Barnstrumpor Strumpor Barn Flickor : Sömlösa färgglada bomullsstrumpor med sneakers Roligt motiv Tecknade djur Enhörning Julklappsidéer 5 par'>
+        <div class="product-info">
+            <h3>ZFSOCK Barnstrumpor Strumpor Barn Flickor : Sömlösa färgglada bomullsstrumpor med sneakers Roligt motiv Tecknade djur Enhörning Julklappsidéer 5 par</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B082FXYSKL/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61kc4Cp-ydL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Fintie Plånbok Smal minimalistisk framficka Plånbok, RFID-Blockering Kreditkortshållare Kortfodral med ID-Fönster för Män Kvinnor (Brun)'>
+        <div class="product-info">
+            <h3>Fintie Plånbok Smal minimalistisk framficka Plånbok, RFID-Blockering Kreditkortshållare Kortfodral med ID-Fönster för Män Kvinnor (Brun)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B001BEAWZM/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/716vzeqa7ZL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Calvin Klein herr 3P Trunk Boxershorts (3-pack)'>
+        <div class="product-info">
+            <h3>Calvin Klein herr 3P Trunk Boxershorts (3-pack)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08MQBKVD6/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51qyfDB5GrL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Casio'>
+        <div class="product-info">
+            <h3>Casio</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DSG3SK64/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71v-Z0HKDpL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='NY Threads Lätta snabbtorkande sportshorts för män med fickor'>
+        <div class="product-info">
+            <h3>NY Threads Lätta snabbtorkande sportshorts för män med fickor</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07DTMG6MH/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/612ATA9z5dL.__AC_SX395_SY395_QL70_ML2_.jpg' alt='ECCO herr TERRACRUISE LTVandringsskor'>
+        <div class="product-info">
+            <h3>ECCO herr TERRACRUISE LTVandringsskor</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DFQ1L8B1/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81YC6d3mHUL.__AC_SX342_SY445_QL70_ML2_.jpg' alt='Minecraft Skolväska Set | Killar Skolväska Set | Gaming Ryggsäck 4 Delar Set | Killar Ryggsäck Set | One Size Svart'>
+        <div class="product-info">
+            <h3>Minecraft Skolväska Set | Killar Skolväska Set | Gaming Ryggsäck 4 Delar Set | Killar Ryggsäck Set | One Size Svart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B09JZFWJ3H/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/817IPEJnGhL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='DANSK ENDURANCE Boxershorts i vävd ekologisk bomull, bekväm passform, för män, 4-pack och 6-pack'>
+        <div class="product-info">
+            <h3>DANSK ENDURANCE Boxershorts i vävd ekologisk bomull, bekväm passform, för män, 4-pack och 6-pack</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Electronics</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B09MQ4KZ27/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41xx-qCJxLL._SY445_SX342_QL70_ML2_.jpg' alt='INIU USB C till USB C Kabel [2M/100W], PD&QC 4.0 USB-C Snabbladdningskabel, Nylonflätad Mobilladdare för iPhone 16/15 Pro Max Samsung Galaxy S24/S23/S22 A55/A35 iPad Air 6/Mini 5 MacBook Huawei Xiaomi'>
+        <div class="product-info">
+            <h3>INIU USB C till USB C Kabel [2M/100W], PD&QC 4.0 USB-C Snabbladdningskabel, Nylonflätad Mobilladdare för iPhone 16/15 Pro Max Samsung Galaxy S24/S23/S22 A55/A35 iPad Air 6/Mini 5 MacBook Huawei Xiaomi</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B7NTY2S6/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71HMMAm+TlL._AC_SY300_SX300_.jpg' alt='SanDisk Ultra 128GB microSDXC kort + SD-adapter, för Android-smartphones och surfplattor, upp till 140 MB/s, med A1 App Prestanda, UHS-I, Kort 10, U1'>
+        <div class="product-info">
+            <h3>SanDisk Ultra 128GB microSDXC kort + SD-adapter, för Android-smartphones och surfplattor, upp till 140 MB/s, med A1 App Prestanda, UHS-I, Kort 10, U1</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DSHBM2PS/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51tITWLlLuL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='RSH Air Tracker-taggar 1-pack bagagespårningsetiketter fungerar med Hitta min enhet App, Bluetooth-spårare, nyckelhittare och artikellokalisering för bagage, ryggsäck, resväskor, utbytbart batteri'>
+        <div class="product-info">
+            <h3>RSH Air Tracker-taggar 1-pack bagagespårningsetiketter fungerar med Hitta min enhet App, Bluetooth-spårare, nyckelhittare och artikellokalisering för bagage, ryggsäck, resväskor, utbytbart batteri</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0000C73CQ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61cpxtAOkFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='instax mini film, 20 pack'>
+        <div class="product-info">
+            <h3>instax mini film, 20 pack</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00019RA8U/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81GYRhRbSIL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='CR2032 Batteri - 5-pack - Knappcell Litium Batterier 3V- GP Batteries'>
+        <div class="product-info">
+            <h3>CR2032 Batteri - 5-pack - Knappcell Litium Batterier 3V- GP Batteries</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08VD632WJ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71Rbwz4CaiL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='INIU 10000mAh Mini Power Bank, 22,5W PD3.0 QC4.0 Snabbladdning Extern Batteri, USB C in&out Bärbar Laddare för iPhone 16 15 14 13 12 Pro Max iPad Air 6 Mini 5 Samsung Galaxy S24 S23 S22 Pixel Xiaomi'>
+        <div class="product-info">
+            <h3>INIU 10000mAh Mini Power Bank, 22,5W PD3.0 QC4.0 Snabbladdning Extern Batteri, USB C in&out Bärbar Laddare för iPhone 16 15 14 13 12 Pro Max iPad Air 6 Mini 5 Samsung Galaxy S24 S23 S22 Pixel Xiaomi</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B1JNDZ5J/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81bssiCW7TL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Kingston DataTraveler Exodia M USB 3.2 Gen 1 DTXM/64GB – med rörligt lock (svart + blå)'>
+        <div class="product-info">
+            <h3>Kingston DataTraveler Exodia M USB 3.2 Gen 1 DTXM/64GB – med rörligt lock (svart + blå)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D8J688ZJ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51wQ5NViZ7L.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Snabbladdare 25 W för iPhone 14 13 12 11 Pro Max Plus SE Mini Xr X XS USB C 2 m snabbladdningskabel Strömadapter'>
+        <div class="product-info">
+            <h3>Snabbladdare 25 W för iPhone 14 13 12 11 Pro Max Plus SE Mini Xr X XS USB C 2 m snabbladdningskabel Strömadapter</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B9C4DKKG/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71ByVZ1x2vL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='SSD M.2 (2280) 2TB Samsung 990 PRO (PCIe/NVMe)'>
+        <div class="product-info">
+            <h3>SSD M.2 (2280) 2TB Samsung 990 PRO (PCIe/NVMe)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B2PZ994V/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71gY9E+cTaS._AC_SX342_SY445_.jpg' alt='Apple AirTag 4-pack ​​​​​​​'>
+        <div class="product-info">
+            <h3>Apple AirTag 4-pack ​​​​​​​</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B2Q2QHGW/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71BbxmBwVnL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Apple AirTag ​​​​​​​'>
+        <div class="product-info">
+            <h3>Apple AirTag ​​​​​​​</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DCNWN8NZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51oMc4XRaaL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Apple EarPods (usb-c) ​​​​​​​'>
+        <div class="product-info">
+            <h3>Apple EarPods (usb-c) ​​​​​​​</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Toys & Games</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DHSBBV6R/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81Pw-AH0jJL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='LEGO Speed Champions Ferrari SF-24 F1 racerbil Byggmodell med leksaksbil för för barn, Lekset med 1 minifigur, Formel 1 present att samla för pojkar och flickor 77242'>
+        <div class="product-info">
+            <h3>LEGO Speed Champions Ferrari SF-24 F1 racerbil Byggmodell med leksaksbil för för barn, Lekset med 1 minifigur, Formel 1 present att samla för pojkar och flickor 77242</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07NBR59QV/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/612u9nPKXFL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Play-Doh 8-Pack Rainbow, giftfri modellera med 8 färger'>
+        <div class="product-info">
+            <h3>Play-Doh 8-Pack Rainbow, giftfri modellera med 8 färger</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00ZRD99C0/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71BFqKPjRBL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Oball Bright Starts 10340 Classic Flexibel leksak för barn i alla åldrar, Flerfärgad'>
+        <div class="product-info">
+            <h3>Oball Bright Starts 10340 Classic Flexibel leksak för barn i alla åldrar, Flerfärgad</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CPN359F7/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81I85BIpepL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Rainbocorns 92104G Plyschleksak, Ragamuffin (Fluffles), 21.5 cm'>
+        <div class="product-info">
+            <h3>Rainbocorns 92104G Plyschleksak, Ragamuffin (Fluffles), 21.5 cm</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B005I5M2F8/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71MrrNB7jCL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='UNO - Jeu avec 112 Cartes - Cartes Actions et Cartes Joker - Règles Personnalisables - De 2 à 10 Joueurs - Cadeau dès 7 Ans, W2087'>
+        <div class="product-info">
+            <h3>UNO - Jeu avec 112 Cartes - Cartes Actions et Cartes Joker - Règles Personnalisables - De 2 à 10 Joueurs - Cadeau dès 7 Ans, W2087</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B28G8W15/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71Jkdecy0ZL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vicloon svartvit babybok, baby mjuka böcker, vikbart mjukt tyg med hög kontrast Tyst bok för 6-12 månader och småbarn, främjar hjärnutveckling baby (svart)'>
+        <div class="product-info">
+            <h3>Vicloon svartvit babybok, baby mjuka böcker, vikbart mjukt tyg med hög kontrast Tyst bok för 6-12 månader och småbarn, främjar hjärnutveckling baby (svart)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D223H58T/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71a-hGgk0+L._AC_SY300_SX300_.jpg' alt='Karaokemaskin för barn, passar barn i åldern 3-12 år, karaokemaskin för barn med mikrofon, fin som present'>
+        <div class="product-info">
+            <h3>Karaokemaskin för barn, passar barn i åldern 3-12 år, karaokemaskin för barn med mikrofon, fin som present</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DWX7K4XZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61+WbCbUd8L._AC_SY300_SX300_.jpg' alt='Ainiv Sugkopp spinner leksaker, 3 st nyckelpiga fjäril söta djur badleksaker, roterande sugkoppsleksaker, baby spinner leksaker present till småbarn, barn, flickor, pojkar'>
+        <div class="product-info">
+            <h3>Ainiv Sugkopp spinner leksaker, 3 st nyckelpiga fjäril söta djur badleksaker, roterande sugkoppsleksaker, baby spinner leksaker present till småbarn, barn, flickor, pojkar</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B082J4H9D3/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71pM9dK7YML.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vault X 9-fickors Kortpärm med Dragkedja, 360 Kort, Premium Exo-Tec Album Material, 20 Sidmatade Sidor, Pärm för Samlarkortspel, Sportkort, TCG (Grön)'>
+        <div class="product-info">
+            <h3>Vault X 9-fickors Kortpärm med Dragkedja, 360 Kort, Premium Exo-Tec Album Material, 20 Sidmatade Sidor, Pärm för Samlarkortspel, Sportkort, TCG (Grön)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DLW6829Q/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81HTtIxGIQL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='HGRGHH Hantverk flicka 6 7 8 9 10 år, 5D diamantmålning nyckelring, pyssla din egen GEM-nyckelring, pysselset barn från 6 år, enhörning flicka presenter 6–12 år'>
+        <div class="product-info">
+            <h3>HGRGHH Hantverk flicka 6 7 8 9 10 år, 5D diamantmålning nyckelring, pyssla din egen GEM-nyckelring, pysselset barn från 6 år, enhörning flicka presenter 6–12 år</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CNGY3FBY/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81gOVRSCokL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='AQXONG 70 st Magnetiska byggleksaker Magnetiska byggstenar Leksaker Pedagogiska byggstenar Leksaker Byggleksaker för barn Lämpliga för 3+ pojkar och flickor'>
+        <div class="product-info">
+            <h3>AQXONG 70 st Magnetiska byggleksaker Magnetiska byggstenar Leksaker Pedagogiska byggstenar Leksaker Byggleksaker för barn Lämpliga för 3+ pojkar och flickor</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DWDRZQYB/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81A7LbrmDDL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='LEGO Minecraft Creeper Spelprydnad, Kreativa byggleksak med actionfigur för barn, Rolig present med dataspelstema, Rumsdekoration till spelrummet, Samlarobjekt för pojkar och flickor 21276'>
+        <div class="product-info">
+            <h3>LEGO Minecraft Creeper Spelprydnad, Kreativa byggleksak med actionfigur för barn, Rolig present med dataspelstema, Rumsdekoration till spelrummet, Samlarobjekt för pojkar och flickor 21276</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Books</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D4YLQRMP/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51XqmEHheYL._SX342_SY445_.jpg' alt='Cozy Friends: Coloring Book for Adults and Teens Featuring Super Cute Animal Characters with Easy and Simple Designs for Relaxation'>
+        <div class="product-info">
+            <h3>Cozy Friends: Coloring Book for Adults and Teens Featuring Super Cute Animal Characters with Easy and Simple Designs for Relaxation</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/0349439303/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51Bzd-JkwEL._SY445_SX342_.jpg' alt='Redeeming 6'>
+        <div class="product-info">
+            <h3>Redeeming 6</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/0349439257/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51oU9w62frL._SY445_SX342_.jpg' alt='Binding 13'>
+        <div class="product-info">
+            <h3>Binding 13</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/0349439273/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51YUYdUHIZL._SY445_SX342_.jpg' alt='Keeping 13'>
+        <div class="product-info">
+            <h3>Keeping 13</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/1529381002/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51K3GE9x-PL._SY445_SX342_.jpg' alt='The Ballad of Never After'>
+        <div class="product-info">
+            <h3>The Ballad of Never After</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/1529380944/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51waM0DT-GL._SY445_SX342_.jpg' alt='Once Upon a Broken Heart'>
+        <div class="product-info">
+            <h3>Once Upon a Broken Heart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/0349439281/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51WSTbRVc3L._SY445_SX342_.jpg' alt='Saving 6'>
+        <div class="product-info">
+            <h3>Saving 6</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0D55MQN2R/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51nnUDKN4QL._SX342_SY445_.jpg' alt='Fuzzy Hygge: Cute and Cozy Coloring Book for Adults & Teens Featuring Adorable Animals Characters for Stress Relief'>
+        <div class="product-info">
+            <h3>Fuzzy Hygge: Cute and Cozy Coloring Book for Adults & Teens Featuring Adorable Animals Characters for Stress Relief</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/1529399327/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/519zxqYmjeL._SY445_SX342_.jpg' alt='A Curse For True Love: the thrilling final book in the Once Upon a Broken Heart series: 3'>
+        <div class="product-info">
+            <h3>A Curse For True Love: the thrilling final book in the Once Upon a Broken Heart series: 3</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/9179856594/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61S6-OB-uiL._SY445_SX342_.jpg' alt='Lär dig skriva stora och små bokstäver'>
+        <div class="product-info">
+            <h3>Lär dig skriva stora och små bokstäver</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/0349439354/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/5147WcMxN3L._SY445_SX342_.jpg' alt='Taming 7'>
+        <div class="product-info">
+            <h3>Taming 7</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/139972861X/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/514q70qPIdL._SY445_SX342_.jpg' alt='Play Along'>
+        <div class="product-info">
+            <h3>Play Along</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Sports & Outdoors</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B089KRZSVR/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71ZLIQM-fhL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Ion8 Barn Stålflaska, 400 ml/13 oz, Läcksäker, Lätt att Öppna, Säkert Lås, Diskmaskinssäker, Vändbart Lock, Bärhandtag, Lätt att Rengöra, Hållbar, Metallflaska, Koldioxidneutral'>
+        <div class="product-info">
+            <h3>Ion8 Barn Stålflaska, 400 ml/13 oz, Läcksäker, Lätt att Öppna, Säkert Lås, Diskmaskinssäker, Vändbart Lock, Bärhandtag, Lätt att Rengöra, Hållbar, Metallflaska, Koldioxidneutral</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0C3YMHJ3R/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71cTmcXJ2+L._AC_SY300_SX300_.jpg' alt='GRIFEMA GA1201-12 stöldskydd cykellås med nyckel, kedjelås för cyklar, motorcyklar, skotrar, 120 cm, svart'>
+        <div class="product-info">
+            <h3>GRIFEMA GA1201-12 stöldskydd cykellås med nyckel, kedjelås för cyklar, motorcyklar, skotrar, 120 cm, svart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CHN3W617/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51uQ5c1MS5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Fitbit Unisex vuxen Charge 6 tracker'>
+        <div class="product-info">
+            <h3>Fitbit Unisex vuxen Charge 6 tracker</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07DYLZW1R/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71YL5+i25LL._AC_SY300_SX300_.jpg' alt='Super Sparrow Vattenflaska -350ml/500ml/620ml/750ml/1L - Rostfritt Stål Vattenflaska - Termos Standard Mun - Giftfri BPA-Fri - Perfekt Som Sportflaska - 2 Lock'>
+        <div class="product-info">
+            <h3>Super Sparrow Vattenflaska -350ml/500ml/620ml/750ml/1L - Rostfritt Stål Vattenflaska - Termos Standard Mun - Giftfri BPA-Fri - Perfekt Som Sportflaska - 2 Lock</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0C38XWJ5C/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61JEqRn8AaL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Hopprep – hopprep justerbart för män kvinnor barn – hopprep för träning fettförbränning träning hem eller gym personlig träning rep röd'>
+        <div class="product-info">
+            <h3>Hopprep – hopprep justerbart för män kvinnor barn – hopprep för träning fettförbränning träning hem eller gym personlig träning rep röd</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01LBI63WI/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71+GJlL0+AL._AC_SY300_SX300_.jpg' alt='Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm grå)'>
+        <div class="product-info">
+            <h3>Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm grå)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B009SLTSF0/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/714yCYCcnUL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PGA Tour 24 Air Flow övning golfboll'>
+        <div class="product-info">
+            <h3>PGA Tour 24 Air Flow övning golfboll</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CBPHGWJ2/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71cEdbO4RdL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc'>
+        <div class="product-info">
+            <h3>Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01C9NXXTK/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/810TvycKdjL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PROIRON Hantlar, neopren-hantelvikter på 1–10 kg, weights för hem gym, hantel för män och kvinnor, träning, tyngdlyftning, konditionsträning, som säljs i par eller i en uppsättning'>
+        <div class="product-info">
+            <h3>PROIRON Hantlar, neopren-hantelvikter på 1–10 kg, weights för hem gym, hantel för män och kvinnor, träning, tyngdlyftning, konditionsträning, som säljs i par eller i en uppsättning</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07GGL736F/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71id2SY3n8L.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Sveltus Massagerulle, vuxna, unisex, svart/orange, en storlek'>
+        <div class="product-info">
+            <h3>Sveltus Massagerulle, vuxna, unisex, svart/orange, en storlek</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DH8HYL4K/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71tSnoV2KKL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader'>
+        <div class="product-info">
+            <h3>PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B09J923TRV/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81TmxXVyQyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='EDCX 4 mm Polyester Paracord 550 (15, 30 och 50 m) – 4 mm typ III, rivsäker fallskärmslina för överlevnad Tillverkad av 100% polyester med 7 trådar | Solida färger'>
+        <div class="product-info">
+            <h3>EDCX 4 mm Polyester Paracord 550 (15, 30 och 50 m) – 4 mm typ III, rivsäker fallskärmslina för överlevnad Tillverkad av 100% polyester med 7 trådar | Solida färger</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Health & Household</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B09JS56L1T/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81XlbSrBvOL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='2025 Innovativ Sovmask för Män och Kvinnor, Ljusblockerande Ögonmask för Sömn, Tupplur, Meditation, Resa(Svart)'>
+        <div class="product-info">
+            <h3>2025 Innovativ Sovmask för Män och Kvinnor, Ljusblockerande Ögonmask för Sömn, Tupplur, Meditation, Resa(Svart)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0B4SCYCLS/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81IpkqhiqsL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Oral-B Vitality Pro Svart Eltandborste, 1 Borsthuvud, Designed By Braun'>
+        <div class="product-info">
+            <h3>Oral-B Vitality Pro Svart Eltandborste, 1 Borsthuvud, Designed By Braun</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07S9PTLNZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/21wW7Xf7Q+L._SX342_SY445_.jpg' alt='RENPHO personvåg, kroppsvåg med högprecisionssensorer, personlig digitalvåg med step-on-teknik, viktvåg av säkerhetsglas, svart'>
+        <div class="product-info">
+            <h3>RENPHO personvåg, kroppsvåg med högprecisionssensorer, personlig digitalvåg med step-on-teknik, viktvåg av säkerhetsglas, svart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B08KYXNCSY/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61tORmbUXGL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Finish Diskmaskinsrengöring Citron 250ml'>
+        <div class="product-info">
+            <h3>Finish Diskmaskinsrengöring Citron 250ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00RCK2JAU/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71H7IUqnonL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000'>
+        <div class="product-info">
+            <h3>20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CF28WQH3/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61QUNfBFbCL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kreatinmonohydrat 1kg pulver - 11 månaders förbrukning - 1000g veganskt mikroniserat kreatinpulver - 330 portioner - Fri från magnesiumstearat, gluten & laktos - WeightWorld'>
+        <div class="product-info">
+            <h3>Kreatinmonohydrat 1kg pulver - 11 månaders förbrukning - 1000g veganskt mikroniserat kreatinpulver - 330 portioner - Fri från magnesiumstearat, gluten & laktos - WeightWorld</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CN117XW3/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71Y39wpgZ5L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='YES Diskmedel Original med en rik formula för skinande ren disk, effektivt avlägsnande av ingrodda matrester och fantastisk fruktig och blommig doft 1250ml'>
+        <div class="product-info">
+            <h3>YES Diskmedel Original med en rik formula för skinande ren disk, effektivt avlägsnande av ingrodda matrester och fantastisk fruktig och blommig doft 1250ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01N6QQGZJ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61R0710zCfL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='BIOMED - Supervit tandkräm 100 g, naturlig mild blekning, lugnar känslighet och tandkött, återställer emalj, fri från fluor, SLS, PEG, sackarin och gluten, vegan, halal, kokossmak'>
+        <div class="product-info">
+            <h3>BIOMED - Supervit tandkräm 100 g, naturlig mild blekning, lugnar känslighet och tandkött, återställer emalj, fri från fluor, SLS, PEG, sackarin och gluten, vegan, halal, kokossmak</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07D4N472Q/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61Q7i-NDpRL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Isopropanol 99,9% spritalkohol 1000ml'>
+        <div class="product-info">
+            <h3>Isopropanol 99,9% spritalkohol 1000ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B015OMHL82/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81ovQWb2PML.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Regina 8004260458702 Toalettpapper, 16 rullar'>
+        <div class="product-info">
+            <h3>Regina 8004260458702 Toalettpapper, 16 rullar</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0FL3YPB6K/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81b1qra4dXL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='VIGOROUS Mellanrumsborstar ISO 2'>
+        <div class="product-info">
+            <h3>VIGOROUS Mellanrumsborstar ISO 2</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B079H6L89L/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61u22MWWR0L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PHILIPS Sonicare Original W2 Optimal White Standard soniska tandborsthuvuden – 4-enhetspaket i svart (modell HX6064/11)'>
+        <div class="product-info">
+            <h3>PHILIPS Sonicare Original W2 Optimal White Standard soniska tandborsthuvuden – 4-enhetspaket i svart (modell HX6064/11)</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Tools & Home Improvement</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CR1DBBFN/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41Lmi5mwMGL._SY445_SX342_QL70_ML2_.jpg' alt='eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart'>
+        <div class="product-info">
+            <h3>eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07GC5T84Z/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61u2s50EV4L._SY445_SX342_QL70_ML2_.jpg' alt='S&R Slipskivor 125 mm Set - Sliprondeller 60 st, Slipapper korn 40/60/80/120/180/240 (10 st vardera), 8 hål, krok snabbmontering för slumpmässig Orbit slipmaskin, excentrisk slipmaskin'>
+        <div class="product-info">
+            <h3>S&R Slipskivor 125 mm Set - Sliprondeller 60 st, Slipapper korn 40/60/80/120/180/240 (10 st vardera), 8 hål, krok snabbmontering för slumpmässig Orbit slipmaskin, excentrisk slipmaskin</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0C9HRB1M5/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/81jBsKw3jzL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Officer PRODUCTS dragkedjepåse tryckförslutning 6 x 8 cm/100 stycken (1-pack)/transparent glasklar/tryckförslutningspåse zip set/dragkedjeväska/polypåse/tillverkad av fast LDPE-folie livsmedelssäker'>
+        <div class="product-info">
+            <h3>Officer PRODUCTS dragkedjepåse tryckförslutning 6 x 8 cm/100 stycken (1-pack)/transparent glasklar/tryckförslutningspåse zip set/dragkedjeväska/polypåse/tillverkad av fast LDPE-folie livsmedelssäker</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07FQDKR28/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61kT6QXpbFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart'>
+        <div class="product-info">
+            <h3>eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CJ621Q1R/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71yECJxwzUL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Double Dragon 100 st Blandade självförslutande brevväskor | Manipulationssäker plastförpackning för post, porto, frakt och leverans | 4 storlekar | Liten till stor | 25 var (Förpackning med 100)'>
+        <div class="product-info">
+            <h3>Double Dragon 100 st Blandade självförslutande brevväskor | Manipulationssäker plastförpackning för post, porto, frakt och leverans | 4 storlekar | Liten till stor | 25 var (Förpackning med 100)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B06X977K8L/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41j6AYLIu7L._SY445_SX342_QL70_ML2_.jpg' alt='Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft'>
+        <div class="product-info">
+            <h3>Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B09M8PFRWP/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/316lau9FkML._SY445_SX342_QL70_ML2_.jpg' alt='Newaner digitalt skjutmått på 150 mm/6 tum, digitalt kolfiber med klart Lcd och backup-batteri, professionell kaliper för utomhusbruk, inomhus, djup och stegmätning'>
+        <div class="product-info">
+            <h3>Newaner digitalt skjutmått på 150 mm/6 tum, digitalt kolfiber med klart Lcd och backup-batteri, professionell kaliper för utomhusbruk, inomhus, djup och stegmätning</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DM8ZQC23/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71SnH3FhbZL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='SOLEYIN Ultra PLA filament 1,75 mm ros, 3D-skrivarfilament 1 kg hög hastighet 30–300 mm/s miljövänlig, för de flesta 3D-skrivare, Creality Ender, K1 K1C K2 plus (nypon)'>
+        <div class="product-info">
+            <h3>SOLEYIN Ultra PLA filament 1,75 mm ros, 3D-skrivarfilament 1 kg hög hastighet 30–300 mm/s miljövänlig, för de flesta 3D-skrivare, Creality Ender, K1 K1C K2 plus (nypon)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DGX998KX/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/8185bvgf9zL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='SUNLU 4KG PLA+2.0 Filament, Uppgradera PLA Plus 3D Skrivarfilament, Starkare och mer Robust, 1KG per Spole, 4KG Totalt, Svart+Vit+Blå+Röd'>
+        <div class="product-info">
+            <h3>SUNLU 4KG PLA+2.0 Filament, Uppgradera PLA Plus 3D Skrivarfilament, Starkare och mer Robust, 1KG per Spole, 4KG Totalt, Svart+Vit+Blå+Röd</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0C6236N65/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71vVQ7WNEyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Finish Spolglans Shine & Dry 800ml'>
+        <div class="product-info">
+            <h3>Finish Spolglans Shine & Dry 800ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0CC1Y6SK1/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71uYFRgn6LL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Magrimaxio Postpåsar, fraktpåsar för kläder, förpackningspåsar i plast, med självhäftande stängning, ogenomskinliga, L, (25,5 × 33 cm (10 x 13 tum)), 100 stycken'>
+        <div class="product-info">
+            <h3>Magrimaxio Postpåsar, fraktpåsar för kläder, förpackningspåsar i plast, med självhäftande stängning, ogenomskinliga, L, (25,5 × 33 cm (10 x 13 tum)), 100 stycken</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0DDTGRRG2/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/41H-EYMuxFL._SY445_SX342_QL70_ML2_.jpg' alt='eSUN PETG Filament 1.75mm, PETG Filament med Hög Seghet, 1KG Spole (2.2 LBS) 3D-Utskriftsfilament för 3D-Skrivare,Solid Vit'>
+        <div class="product-info">
+            <h3>eSUN PETG Filament 1.75mm, PETG Filament med Hög Seghet, 1KG Spole (2.2 LBS) 3D-Utskriftsfilament för 3D-Skrivare,Solid Vit</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
+<section>
+    <div class="category-header">Pet Supplies</div>
+    <div class="product-scroll-container">
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07CPK4T22/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71OSx90k62L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Biokat's Diamond Care Fresh med doft av babypuder - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)'>
+        <div class="product-info">
+            <h3>Biokat's Diamond Care Fresh med doft av babypuder - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0C1GG17WR/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/712YUZ0acyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)'>
+        <div class="product-info">
+            <h3>AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0819XVK92/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71hmdqmQb3L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='ACE2ACE Borttagningsrulle för Husdjurshår, Ateranvändbar Borste för Djurhårborttagning för Hundar och Katter, Lätt att Självrengöra Husdjurspälsen från Matta, Möbler, Kläder och Sängkläder, Soffa'>
+        <div class="product-info">
+            <h3>ACE2ACE Borttagningsrulle för Husdjurshår, Ateranvändbar Borste för Djurhårborttagning för Hundar och Katter, Lätt att Självrengöra Husdjurspälsen från Matta, Möbler, Kläder och Sängkläder, Soffa</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B00U7LCKZ0/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71jIOh89z6L.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Kaytee Clean & Cozy Strö med luktkontroll för smådjur som möss, ökenråttor, gnagare, hamster, kanin, superabsorberande pappersströ, 99,9% dammfritt, vitt, 85 liter'>
+        <div class="product-info">
+            <h3>Kaytee Clean & Cozy Strö med luktkontroll för smådjur som möss, ökenråttor, gnagare, hamster, kanin, superabsorberande pappersströ, 99,9% dammfritt, vitt, 85 liter</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B000LXUWN6/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61S6Xxk8YDL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Tetra AquaSafe Vattenberedningsmedel för Akvarier, 0,5 l'>
+        <div class="product-info">
+            <h3>Tetra AquaSafe Vattenberedningsmedel för Akvarier, 0,5 l</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B01MROLYGF/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/51h1jaCL1rL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Simple Solution Extreme Stain and Odour Remover for Cats, Enzymatic Cleaner with 3X Pro-Bacterial Cleansing Power - 750 ml'>
+        <div class="product-info">
+            <h3>Simple Solution Extreme Stain and Odour Remover for Cats, Enzymatic Cleaner with 3X Pro-Bacterial Cleansing Power - 750 ml</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B073V4SRBZ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61X1fZEnNlL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Vet's Best Dental Care Finger Wipes, Reduces Plaque and Refreshes, Dental Cleaning Finger Wipes for Dogs and Cats - 50 Disposable Wipes'>
+        <div class="product-info">
+            <h3>Vet's Best Dental Care Finger Wipes, Reduces Plaque and Refreshes, Dental Cleaning Finger Wipes for Dogs and Cats - 50 Disposable Wipes</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0BPD587DQ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/91OwKrcKvcL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Whiskas 1+ kattmat Tasty Mix Chef's Choice i sås, 40 x 85 g (1-pack) – högkvalitativt våtfoder för vuxna katter i 40 portionspåsar'>
+        <div class="product-info">
+            <h3>Whiskas 1+ kattmat Tasty Mix Chef's Choice i sås, 40 x 85 g (1-pack) – högkvalitativt våtfoder för vuxna katter i 40 portionspåsar</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07CPDVRD9/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71BTCs+F4GL._AC_SY300_SX300_.jpg' alt='Biokat's Diamond Care Classic luktfritt - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)'>
+        <div class="product-info">
+            <h3>Biokat's Diamond Care Classic luktfritt - Fint kattströ med aktivt kol och aloe vera - 1 säck (1 x 10 l)</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B07349PHVG/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/71EsBcI5XbL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='KERBL PET 2-in-1 Catch The Tail Feather 81666 Kattleksak, Grå, Gul, 70 x 53 x 5 cm'>
+        <div class="product-info">
+            <h3>KERBL PET 2-in-1 Catch The Tail Feather 81666 Kattleksak, Grå, Gul, 70 x 53 x 5 cm</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0009585SA/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/61t0wfhx8dL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='TRIXIE 2373 Klosax, Blå, Svart, L, 8 cm'>
+        <div class="product-info">
+            <h3>TRIXIE 2373 Klosax, Blå, Svart, L, 8 cm</h3>
+        </div>
+    </a>
+</div>
+<div class="product-card">
+    <a href="https://www.amazon.se/dp/B0079F3ICQ/?tag=amzing2025-21" target="_blank">
+        <img src='https://m.media-amazon.com/images/I/712LJElq6eL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PURINA GOURMET guld fin pasta kattfoder vått, med kyckling, 12-pack (12 x 85 g)'>
+        <div class="product-info">
+            <h3>PURINA GOURMET guld fin pasta kattfoder vått, med kyckling, 12-pack (12 x 85 g)</h3>
+        </div>
+    </a>
+</div>
+    </div>
+</section>
 </body>
 </html>
