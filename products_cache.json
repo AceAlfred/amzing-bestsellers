@@ -1,24 +1,166 @@
 {
-  "timestamp": "2025-08-15T14:25:53.375817",
+  "timestamp": "2025-08-15T14:29:33.637404",
   "products": {
+    "Clothing, Shoes & Jewelry": [
+      {
+        "asin": "B0D9QCX786",
+        "title": "B0D9QCX786",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0D9QCX786"
+      },
+      {
+        "asin": "B087JGF2MK",
+        "title": "B087JGF2MK",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B087JGF2MK"
+      },
+      {
+        "asin": "B0D6G31FLV",
+        "title": "B0D6G31FLV",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0D6G31FLV"
+      },
+      {
+        "asin": "B0DH3CZXNS",
+        "title": "B0DH3CZXNS",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0DH3CZXNS"
+      },
+      {
+        "asin": "B082FXYSKL",
+        "title": "B082FXYSKL",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B082FXYSKL"
+      },
+      {
+        "asin": "B001BEAWZM",
+        "title": "B001BEAWZM",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B001BEAWZM"
+      },
+      {
+        "asin": "B08MQBKVD6",
+        "title": "B08MQBKVD6",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08MQBKVD6"
+      },
+      {
+        "asin": "B0DSG3SK64",
+        "title": "B0DSG3SK64",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0DSG3SK64"
+      },
+      {
+        "asin": "B0DFQ1L8B1",
+        "title": "B0DFQ1L8B1",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0DFQ1L8B1"
+      },
+      {
+        "asin": "B07DTMG6MH",
+        "title": "B07DTMG6MH",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B07DTMG6MH"
+      },
+      {
+        "asin": "B09JZFWJ3H",
+        "title": "B09JZFWJ3H",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B09JZFWJ3H"
+      },
+      {
+        "asin": "B099MM1YLJ",
+        "title": "B099MM1YLJ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B099MM1YLJ"
+      }
+    ],
+    "Beauty & Personal Care": [
+      {
+        "asin": "B0CC6KWFJZ",
+        "title": "B0CC6KWFJZ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0CC6KWFJZ"
+      },
+      {
+        "asin": "B00TH1ICEO",
+        "title": "B00TH1ICEO",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B00TH1ICEO"
+      },
+      {
+        "asin": "B00763ABGC",
+        "title": "B00763ABGC",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B00763ABGC"
+      },
+      {
+        "asin": "B08JW4QBSL",
+        "title": "B08JW4QBSL",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08JW4QBSL"
+      },
+      {
+        "asin": "B01KLXFBVI",
+        "title": "B01KLXFBVI",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B01KLXFBVI"
+      },
+      {
+        "asin": "B08KT2Z93D",
+        "title": "B08KT2Z93D",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08KT2Z93D"
+      },
+      {
+        "asin": "B0CQHWV2QX",
+        "title": "B0CQHWV2QX",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0CQHWV2QX"
+      },
+      {
+        "asin": "B08WR5CPNB",
+        "title": "B08WR5CPNB",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08WR5CPNB"
+      },
+      {
+        "asin": "B06XTPX8B2",
+        "title": "B06XTPX8B2",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B06XTPX8B2"
+      },
+      {
+        "asin": "B08TWQ37XF",
+        "title": "B08TWQ37XF",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08TWQ37XF"
+      },
+      {
+        "asin": "B0CPCV2TGH",
+        "title": "B0CPCV2TGH",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0CPCV2TGH"
+      },
+      {
+        "asin": "B07ZHKTQL3",
+        "title": "B07ZHKTQL3",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B07ZHKTQL3"
+      }
+    ],
     "Home & Kitchen": [
-      {
-        "asin": "B07M8J529S",
-        "title": "B07M8J529S",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B07M8J529S"
-      },
-      {
-        "asin": "B08NDVTN5C",
-        "title": "B08NDVTN5C",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08NDVTN5C"
-      },
       {
         "asin": "B01N9XBDTI",
         "title": "B01N9XBDTI",
         "img": null,
         "url": "https://www.amazon.se/dp/B01N9XBDTI"
+      },
+      {
+        "asin": "B0BVRFSY79",
+        "title": "B0BVRFSY79",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0BVRFSY79"
       },
       {
         "asin": "B07WKKS4HB",
@@ -73,169 +215,15 @@
         "title": "B0D6XRMT73",
         "img": null,
         "url": "https://www.amazon.se/dp/B0D6XRMT73"
-      }
-    ],
-    "Clothing, Shoes & Jewelry": [
-      {
-        "asin": "B0D9QCX786",
-        "title": "B0D9QCX786",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0D9QCX786"
       },
       {
-        "asin": "B087JGF2MK",
-        "title": "B087JGF2MK",
+        "asin": "B0BF9W3WC4",
+        "title": "B0BF9W3WC4",
         "img": null,
-        "url": "https://www.amazon.se/dp/B087JGF2MK"
-      },
-      {
-        "asin": "B082FXYSKL",
-        "title": "B082FXYSKL",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B082FXYSKL"
-      },
-      {
-        "asin": "B08MQBKVD6",
-        "title": "B08MQBKVD6",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08MQBKVD6"
-      },
-      {
-        "asin": "B0DSG3SK64",
-        "title": "B0DSG3SK64",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DSG3SK64"
-      },
-      {
-        "asin": "B07DTMG6MH",
-        "title": "B07DTMG6MH",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B07DTMG6MH"
-      },
-      {
-        "asin": "B0DFQ1L8B1",
-        "title": "B0DFQ1L8B1",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DFQ1L8B1"
-      },
-      {
-        "asin": "B09JZFWJ3H",
-        "title": "B09JZFWJ3H",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B09JZFWJ3H"
-      },
-      {
-        "asin": "B099MM1YLJ",
-        "title": "B099MM1YLJ",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B099MM1YLJ"
-      },
-      {
-        "asin": "B00UC151FG",
-        "title": "B00UC151FG",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B00UC151FG"
-      },
-      {
-        "asin": "B0CW378ZL8",
-        "title": "B0CW378ZL8",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CW378ZL8"
-      },
-      {
-        "asin": "B0D6G31FLV",
-        "title": "ZFSOCK Barnstrumpor Strumpor Barn Flickor : Sömlösa färgglada bomullsstrumpor med sneakers Roligt mo",
-        "img": "https://m.media-amazon.com/images/I/81auPyutigL.__AC_SY445_SX342_QL70_ML2_.jpg",
-        "url": "https://www.amazon.se/dp/B0D6G31FLV"
-      }
-    ],
-    "Beauty & Personal Care": [
-      {
-        "asin": "B00763ABGC",
-        "title": "B00763ABGC",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B00763ABGC"
-      },
-      {
-        "asin": "B08JW4QBSL",
-        "title": "B08JW4QBSL",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08JW4QBSL"
-      },
-      {
-        "asin": "B00TH1ICEO",
-        "title": "B00TH1ICEO",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B00TH1ICEO"
-      },
-      {
-        "asin": "B0CC6KWFJZ",
-        "title": "B0CC6KWFJZ",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CC6KWFJZ"
-      },
-      {
-        "asin": "B0BV7M34VF",
-        "title": "B0BV7M34VF",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0BV7M34VF"
-      },
-      {
-        "asin": "B01KLXFBVI",
-        "title": "B01KLXFBVI",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B01KLXFBVI"
-      },
-      {
-        "asin": "B08KT2Z93D",
-        "title": "B08KT2Z93D",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08KT2Z93D"
-      },
-      {
-        "asin": "B0DK4Y2YP3",
-        "title": "B0DK4Y2YP3",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DK4Y2YP3"
-      },
-      {
-        "asin": "B08WR5CPNB",
-        "title": "B08WR5CPNB",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08WR5CPNB"
-      },
-      {
-        "asin": "B06XTPX8B2",
-        "title": "B06XTPX8B2",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B06XTPX8B2"
-      },
-      {
-        "asin": "B08TWQ37XF",
-        "title": "B08TWQ37XF",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B08TWQ37XF"
-      },
-      {
-        "asin": "B0CPCV2TGH",
-        "title": "B0CPCV2TGH",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CPCV2TGH"
+        "url": "https://www.amazon.se/dp/B0BF9W3WC4"
       }
     ],
     "Electronics": [
-      {
-        "asin": "B0B7NTY2S6",
-        "title": "B0B7NTY2S6",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0B7NTY2S6"
-      },
-      {
-        "asin": "B0000C73CQ",
-        "title": "B0000C73CQ",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0000C73CQ"
-      },
       {
         "asin": "B0DSHBM2PS",
         "title": "B0DSHBM2PS",
@@ -243,10 +231,10 @@
         "url": "https://www.amazon.se/dp/B0DSHBM2PS"
       },
       {
-        "asin": "B00019RA8U",
-        "title": "B00019RA8U",
+        "asin": "B0B7NTY2S6",
+        "title": "B0B7NTY2S6",
         "img": null,
-        "url": "https://www.amazon.se/dp/B00019RA8U"
+        "url": "https://www.amazon.se/dp/B0B7NTY2S6"
       },
       {
         "asin": "B08VD632WJ",
@@ -261,6 +249,12 @@
         "url": "https://www.amazon.se/dp/B0B1JNDZ5J"
       },
       {
+        "asin": "B0000C73CQ",
+        "title": "B0000C73CQ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0000C73CQ"
+      },
+      {
         "asin": "B0D8J688ZJ",
         "title": "B0D8J688ZJ",
         "img": null,
@@ -273,102 +267,34 @@
         "url": "https://www.amazon.se/dp/B0B9C4DKKG"
       },
       {
-        "asin": "B0DCNWN8NZ",
-        "title": "B0DCNWN8NZ",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DCNWN8NZ"
-      },
-      {
         "asin": "B0B2Q2QHGW",
         "title": "B0B2Q2QHGW",
         "img": null,
         "url": "https://www.amazon.se/dp/B0B2Q2QHGW"
       },
       {
-        "asin": "B09F3P3DQD",
-        "title": "B09F3P3DQD",
+        "asin": "B0B2PZ994V",
+        "title": "B0B2PZ994V",
         "img": null,
-        "url": "https://www.amazon.se/dp/B09F3P3DQD"
+        "url": "https://www.amazon.se/dp/B0B2PZ994V"
+      },
+      {
+        "asin": "B0DCNWN8NZ",
+        "title": "B0DCNWN8NZ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0DCNWN8NZ"
+      },
+      {
+        "asin": "B0CCJN8TY2",
+        "title": "B0CCJN8TY2",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0CCJN8TY2"
       },
       {
         "asin": "B08VJ2VH2J",
         "title": "B08VJ2VH2J",
         "img": null,
         "url": "https://www.amazon.se/dp/B08VJ2VH2J"
-      }
-    ],
-    "Toys & Games": [
-      {
-        "asin": "B0DHSBBV6R",
-        "title": "B0DHSBBV6R",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DHSBBV6R"
-      },
-      {
-        "asin": "B07NBR59QV",
-        "title": "B07NBR59QV",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B07NBR59QV"
-      },
-      {
-        "asin": "B0CPN359F7",
-        "title": "B0CPN359F7",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CPN359F7"
-      },
-      {
-        "asin": "B005I5M2F8",
-        "title": "B005I5M2F8",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B005I5M2F8"
-      },
-      {
-        "asin": "B0B28G8W15",
-        "title": "B0B28G8W15",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0B28G8W15"
-      },
-      {
-        "asin": "B0D223H58T",
-        "title": "B0D223H58T",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0D223H58T"
-      },
-      {
-        "asin": "B082J4H9D3",
-        "title": "B082J4H9D3",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B082J4H9D3"
-      },
-      {
-        "asin": "B0DWX7K4XZ",
-        "title": "B0DWX7K4XZ",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DWX7K4XZ"
-      },
-      {
-        "asin": "B0DLW6829Q",
-        "title": "B0DLW6829Q",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DLW6829Q"
-      },
-      {
-        "asin": "B0CNGY3FBY",
-        "title": "B0CNGY3FBY",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CNGY3FBY"
-      },
-      {
-        "asin": "B0DWDRZQYB",
-        "title": "B0DWDRZQYB",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0DWDRZQYB"
-      },
-      {
-        "asin": "B002ZCZ0F6",
-        "title": "B002ZCZ0F6",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B002ZCZ0F6"
       }
     ],
     "Books": [
@@ -379,22 +305,16 @@
         "url": "https://www.amazon.se/dp/0349439303"
       },
       {
-        "asin": "0349439257",
-        "title": "0349439257",
+        "asin": "1529381002",
+        "title": "1529381002",
         "img": null,
-        "url": "https://www.amazon.se/dp/0349439257"
+        "url": "https://www.amazon.se/dp/1529381002"
       },
       {
         "asin": "0349439273",
         "title": "0349439273",
         "img": null,
         "url": "https://www.amazon.se/dp/0349439273"
-      },
-      {
-        "asin": "1529381002",
-        "title": "1529381002",
-        "img": null,
-        "url": "https://www.amazon.se/dp/1529381002"
       },
       {
         "asin": "1529380944",
@@ -443,106 +363,174 @@
         "title": "1399746421",
         "img": null,
         "url": "https://www.amazon.se/dp/1399746421"
+      },
+      {
+        "asin": "0241764203",
+        "title": "0241764203",
+        "img": null,
+        "url": "https://www.amazon.se/dp/0241764203"
       }
     ],
-    "Tools & Home Improvement": [
+    "Toys & Games": [
       {
-        "asin": "B0CR1DBBFN",
-        "title": "B0CR1DBBFN",
+        "asin": "B0CPN359F7",
+        "title": "B0CPN359F7",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0CR1DBBFN"
+        "url": "https://www.amazon.se/dp/B0CPN359F7"
       },
       {
-        "asin": "B07GC5T84Z",
-        "title": "B07GC5T84Z",
+        "asin": "B00ZRD99C0",
+        "title": "B00ZRD99C0",
         "img": null,
-        "url": "https://www.amazon.se/dp/B07GC5T84Z"
+        "url": "https://www.amazon.se/dp/B00ZRD99C0"
       },
       {
-        "asin": "B0C9HRB1M5",
-        "title": "B0C9HRB1M5",
+        "asin": "B0B28G8W15",
+        "title": "B0B28G8W15",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0C9HRB1M5"
+        "url": "https://www.amazon.se/dp/B0B28G8W15"
       },
       {
-        "asin": "B0CJ621Q1R",
-        "title": "B0CJ621Q1R",
+        "asin": "B0D223H58T",
+        "title": "B0D223H58T",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0CJ621Q1R"
+        "url": "https://www.amazon.se/dp/B0D223H58T"
       },
       {
-        "asin": "B07FQDKR28",
-        "title": "B07FQDKR28",
+        "asin": "B0DWX7K4XZ",
+        "title": "B0DWX7K4XZ",
         "img": null,
-        "url": "https://www.amazon.se/dp/B07FQDKR28"
+        "url": "https://www.amazon.se/dp/B0DWX7K4XZ"
       },
       {
-        "asin": "B06X977K8L",
-        "title": "B06X977K8L",
+        "asin": "B082J4H9D3",
+        "title": "B082J4H9D3",
         "img": null,
-        "url": "https://www.amazon.se/dp/B06X977K8L"
+        "url": "https://www.amazon.se/dp/B082J4H9D3"
       },
       {
-        "asin": "B09M8PFRWP",
-        "title": "B09M8PFRWP",
+        "asin": "B0DLW6829Q",
+        "title": "B0DLW6829Q",
         "img": null,
-        "url": "https://www.amazon.se/dp/B09M8PFRWP"
+        "url": "https://www.amazon.se/dp/B0DLW6829Q"
       },
       {
-        "asin": "B0DM8ZQC23",
-        "title": "B0DM8ZQC23",
+        "asin": "B0CNGY3FBY",
+        "title": "B0CNGY3FBY",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0DM8ZQC23"
+        "url": "https://www.amazon.se/dp/B0CNGY3FBY"
       },
       {
-        "asin": "B0DGX998KX",
-        "title": "B0DGX998KX",
+        "asin": "B0DWDRZQYB",
+        "title": "B0DWDRZQYB",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0DGX998KX"
+        "url": "https://www.amazon.se/dp/B0DWDRZQYB"
       },
       {
-        "asin": "B0C6236N65",
-        "title": "B0C6236N65",
+        "asin": "B002ZCZ0F6",
+        "title": "B002ZCZ0F6",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0C6236N65"
+        "url": "https://www.amazon.se/dp/B002ZCZ0F6"
       },
       {
-        "asin": "B0CC1Y6SK1",
-        "title": "B0CC1Y6SK1",
+        "asin": "B09WYLG6FW",
+        "title": "B09WYLG6FW",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0CC1Y6SK1"
+        "url": "https://www.amazon.se/dp/B09WYLG6FW"
       },
       {
-        "asin": "B0DDTGRRG2",
-        "title": "B0DDTGRRG2",
+        "asin": "B0F7F23QQ1",
+        "title": "B0F7F23QQ1",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0DDTGRRG2"
+        "url": "https://www.amazon.se/dp/B0F7F23QQ1"
+      }
+    ],
+    "Health & Household": [
+      {
+        "asin": "B0B4SCYCLS",
+        "title": "B0B4SCYCLS",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0B4SCYCLS"
+      },
+      {
+        "asin": "B00RCK2JAU",
+        "title": "B00RCK2JAU",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B00RCK2JAU"
+      },
+      {
+        "asin": "B07S9PTLNZ",
+        "title": "B07S9PTLNZ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B07S9PTLNZ"
+      },
+      {
+        "asin": "B0CF28WQH3",
+        "title": "B0CF28WQH3",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0CF28WQH3"
+      },
+      {
+        "asin": "B01N6QQGZJ",
+        "title": "B01N6QQGZJ",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B01N6QQGZJ"
+      },
+      {
+        "asin": "B07D4N472Q",
+        "title": "B07D4N472Q",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B07D4N472Q"
+      },
+      {
+        "asin": "B015OMHL82",
+        "title": "B015OMHL82",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B015OMHL82"
+      },
+      {
+        "asin": "B0FL3YPB6K",
+        "title": "B0FL3YPB6K",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0FL3YPB6K"
+      },
+      {
+        "asin": "B079H6L89L",
+        "title": "B079H6L89L",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B079H6L89L"
+      },
+      {
+        "asin": "B0B4SG34QP",
+        "title": "B0B4SG34QP",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0B4SG34QP"
+      },
+      {
+        "asin": "B08TNTX1XK",
+        "title": "B08TNTX1XK",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B08TNTX1XK"
+      },
+      {
+        "asin": "B00B17MAFE",
+        "title": "B00B17MAFE",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B00B17MAFE"
       }
     ],
     "Sports & Outdoors": [
-      {
-        "asin": "B0C38XWJ5C",
-        "title": "B0C38XWJ5C",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0C38XWJ5C"
-      },
-      {
-        "asin": "B089KRZSVR",
-        "title": "B089KRZSVR",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B089KRZSVR"
-      },
-      {
-        "asin": "B0CHN3W617",
-        "title": "B0CHN3W617",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0CHN3W617"
-      },
       {
         "asin": "B07DYLZW1R",
         "title": "B07DYLZW1R",
         "img": null,
         "url": "https://www.amazon.se/dp/B07DYLZW1R"
+      },
+      {
+        "asin": "B0C38XWJ5C",
+        "title": "B0C38XWJ5C",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0C38XWJ5C"
       },
       {
         "asin": "B0C3YMHJ3R",
@@ -591,100 +579,100 @@
         "title": "B0BK1Y38RD",
         "img": null,
         "url": "https://www.amazon.se/dp/B0BK1Y38RD"
+      },
+      {
+        "asin": "B000RPF8CI",
+        "title": "B000RPF8CI",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B000RPF8CI"
+      },
+      {
+        "asin": "B0DTG15M7K",
+        "title": "B0DTG15M7K",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B0DTG15M7K"
       }
     ],
-    "Health & Household": [
+    "Tools & Home Improvement": [
       {
-        "asin": "B0B4SCYCLS",
-        "title": "B0B4SCYCLS",
+        "asin": "B0C9HRB1M5",
+        "title": "B0C9HRB1M5",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0B4SCYCLS"
+        "url": "https://www.amazon.se/dp/B0C9HRB1M5"
       },
       {
-        "asin": "B07S9PTLNZ",
-        "title": "B07S9PTLNZ",
+        "asin": "B07FQDKR28",
+        "title": "B07FQDKR28",
         "img": null,
-        "url": "https://www.amazon.se/dp/B07S9PTLNZ"
+        "url": "https://www.amazon.se/dp/B07FQDKR28"
       },
       {
-        "asin": "B08KYXNCSY",
-        "title": "B08KYXNCSY",
+        "asin": "B07GC5T84Z",
+        "title": "B07GC5T84Z",
         "img": null,
-        "url": "https://www.amazon.se/dp/B08KYXNCSY"
+        "url": "https://www.amazon.se/dp/B07GC5T84Z"
       },
       {
-        "asin": "B00RCK2JAU",
-        "title": "B00RCK2JAU",
+        "asin": "B0CJ621Q1R",
+        "title": "B0CJ621Q1R",
         "img": null,
-        "url": "https://www.amazon.se/dp/B00RCK2JAU"
+        "url": "https://www.amazon.se/dp/B0CJ621Q1R"
       },
       {
-        "asin": "B0CF28WQH3",
-        "title": "B0CF28WQH3",
+        "asin": "B06X977K8L",
+        "title": "B06X977K8L",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0CF28WQH3"
+        "url": "https://www.amazon.se/dp/B06X977K8L"
       },
       {
-        "asin": "B0CN117XW3",
-        "title": "B0CN117XW3",
+        "asin": "B09M8PFRWP",
+        "title": "B09M8PFRWP",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0CN117XW3"
+        "url": "https://www.amazon.se/dp/B09M8PFRWP"
       },
       {
-        "asin": "B01N6QQGZJ",
-        "title": "B01N6QQGZJ",
+        "asin": "B0DM8ZQC23",
+        "title": "B0DM8ZQC23",
         "img": null,
-        "url": "https://www.amazon.se/dp/B01N6QQGZJ"
+        "url": "https://www.amazon.se/dp/B0DM8ZQC23"
       },
       {
-        "asin": "B07D4N472Q",
-        "title": "B07D4N472Q",
+        "asin": "B0DGX998KX",
+        "title": "B0DGX998KX",
         "img": null,
-        "url": "https://www.amazon.se/dp/B07D4N472Q"
+        "url": "https://www.amazon.se/dp/B0DGX998KX"
       },
       {
-        "asin": "B015OMHL82",
-        "title": "B015OMHL82",
+        "asin": "B0C6236N65",
+        "title": "B0C6236N65",
         "img": null,
-        "url": "https://www.amazon.se/dp/B015OMHL82"
+        "url": "https://www.amazon.se/dp/B0C6236N65"
       },
       {
-        "asin": "B0FL3YPB6K",
-        "title": "B0FL3YPB6K",
+        "asin": "B0CC1Y6SK1",
+        "title": "B0CC1Y6SK1",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0FL3YPB6K"
+        "url": "https://www.amazon.se/dp/B0CC1Y6SK1"
       },
       {
-        "asin": "B079H6L89L",
-        "title": "B079H6L89L",
+        "asin": "B0DDTGRRG2",
+        "title": "B0DDTGRRG2",
         "img": null,
-        "url": "https://www.amazon.se/dp/B079H6L89L"
+        "url": "https://www.amazon.se/dp/B0DDTGRRG2"
       },
       {
-        "asin": "B0B4SG34QP",
-        "title": "B0B4SG34QP",
+        "asin": "B08BCRZZS3",
+        "title": "B08BCRZZS3",
         "img": null,
-        "url": "https://www.amazon.se/dp/B0B4SG34QP"
+        "url": "https://www.amazon.se/dp/B08BCRZZS3"
       }
     ],
     "Pet Supplies": [
-      {
-        "asin": "B0C1GG17WR",
-        "title": "B0C1GG17WR",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B0C1GG17WR"
-      },
       {
         "asin": "B0819XVK92",
         "title": "B0819XVK92",
         "img": null,
         "url": "https://www.amazon.se/dp/B0819XVK92"
-      },
-      {
-        "asin": "B000LXUWN6",
-        "title": "B000LXUWN6",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B000LXUWN6"
       },
       {
         "asin": "B00U7LCKZ0",
@@ -693,16 +681,16 @@
         "url": "https://www.amazon.se/dp/B00U7LCKZ0"
       },
       {
+        "asin": "B000LXUWN6",
+        "title": "B000LXUWN6",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B000LXUWN6"
+      },
+      {
         "asin": "B01MROLYGF",
         "title": "B01MROLYGF",
         "img": null,
         "url": "https://www.amazon.se/dp/B01MROLYGF"
-      },
-      {
-        "asin": "B07CPDVRD9",
-        "title": "B07CPDVRD9",
-        "img": null,
-        "url": "https://www.amazon.se/dp/B07CPDVRD9"
       },
       {
         "asin": "B073V4SRBZ",
@@ -715,6 +703,12 @@
         "title": "B0BPD587DQ",
         "img": null,
         "url": "https://www.amazon.se/dp/B0BPD587DQ"
+      },
+      {
+        "asin": "B07CPDVRD9",
+        "title": "B07CPDVRD9",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B07CPDVRD9"
       },
       {
         "asin": "B07349PHVG",
@@ -739,6 +733,12 @@
         "title": "B0F4QL5T19",
         "img": null,
         "url": "https://www.amazon.se/dp/B0F4QL5T19"
+      },
+      {
+        "asin": "B09DPP6P8X",
+        "title": "B09DPP6P8X",
+        "img": null,
+        "url": "https://www.amazon.se/dp/B09DPP6P8X"
       }
     ]
   }

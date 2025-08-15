@@ -148,22 +148,54 @@ def fetch_product_basic(asin):
     if any(term in title.lower() for term in ['gift card', 'presentkort', 'gavekort']):
         return None
     
-    # Get image with multiple fallbacks
+    # Get image with multiple fallbacks and fix URL
     img_selectors = [
         '#landingImage',
         '#imgTagWrapperId img',
         '.a-dynamic-image',
-        'img.a-dynamic-image'
+        'img.a-dynamic-image',
+        '[data-old-hires]',
+        '[data-a-dynamic-image]'
     ]
     
     img = None
     for selector in img_selectors:
         img_tag = soup.select_one(selector)
-        if img_tag and img_tag.get('src'):
-            img = img_tag['src']
-            # Ensure we get a decent quality image
-            if 'images-amazon.com' in img:
-                break
+        if img_tag:
+            # Try different attributes for image URL
+            img_url = (img_tag.get('data-old-hires') or 
+                      img_tag.get('data-a-dynamic-image') or 
+                      img_tag.get('src') or 
+                      img_tag.get('data-src'))
+            
+            if img_url:
+                # Clean up the image URL for better loading
+                if img_url.startswith('data:'):
+                    continue  # Skip base64 images
+                
+                # Extract JSON data if present
+                if img_url.startswith('{'):
+                    try:
+                        import json
+                        img_data = json.loads(img_url)
+                        if isinstance(img_data, dict):
+                            # Get the largest image
+                            img_url = max(img_data.keys(), key=lambda x: int(x.split(',')[0]) if ',' in x else 0)
+                    except:
+                        continue
+                
+                # Ensure HTTPS and proper format
+                if img_url.startswith('//'):
+                    img_url = 'https:' + img_url
+                elif img_url.startswith('/'):
+                    img_url = 'https://images-na.ssl-images-amazon.com' + img_url
+                
+                # Replace size parameters for better quality and loading
+                if 'images-amazon.com' in img_url:
+                    # Remove size restrictions and add proper size
+                    img_url = re.sub(r'\._[A-Z0-9,_]+_\.', '._AC_SL300_.', img_url)
+                    img = img_url
+                    break
     
     return {
         'asin': asin,
@@ -328,6 +360,7 @@ header p {
     justify-content: center;
     border-bottom: 2px solid #ecf0f1;
     overflow: hidden;
+    position: relative;
 }
 
 .product-card img {
@@ -335,6 +368,27 @@ header p {
     max-height: 90%;
     object-fit: contain;
     transition: transform 0.3s ease;
+    background: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.product-card img[src=""], 
+.product-card img:not([src]) {
+    display: none;
+}
+
+.product-card .no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    border-radius: 8px;
+    color: #999;
+    font-size: 2.5rem;
+    border: 2px dashed #ccc;
 }
 
 .product-card:hover img {
@@ -462,11 +516,19 @@ header p {
         <div class="product-scroll-container">
 """)
             for p in products:
-                img_html = f'<img src="{p["img"]}" alt="{p["title"]}" loading="lazy">' if p['img'] else '<div style="color: #bdc3c7; font-size: 3rem;">📦</div>'
+                # Better image handling with fallback
+                if p['img']:
+                    img_html = f'<img src="{p["img"]}" alt="{p["title"]}" loading="lazy" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">'
+                    fallback_html = f'<div class="no-image" style="display: none;">📦</div>'
+                else:
+                    img_html = ''
+                    fallback_html = f'<div class="no-image">📦</div>'
+                    
                 f.write(f"""            <div class="product-card">
                 <a href="{build_affiliate_link(p['asin'])}" target="_blank" rel="noopener">
                     <div class="image-container">
                         {img_html}
+                        {fallback_html}
                     </div>
                     <div class="product-info">
                         <h3>{p['title']}</h3>
