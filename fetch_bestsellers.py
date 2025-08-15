@@ -118,8 +118,12 @@ body {
     background: #fff;
 }
 .product-card img {
+    display: block;
+    margin: auto;
     width: 100%;
     border-bottom: 1px solid #ddd;
+}
+
 }
 .product-info {
     padding: 10px;
@@ -141,24 +145,6 @@ body {
 }
 </style>
 </head>
-<body>
-<div class="category-header">Electronics</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Books</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Fashion</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Home</div>
-<div class="product-scroll-container">
-</div>
-<div class="category-header">Beauty</div>
-<div class="product-scroll-container">
-</div>
-
-</body>
 </html>
 
 
@@ -176,13 +162,15 @@ body {
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
-        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
     </header>
 """)
         for category, products in products_by_category.items():
             f.write(f"""    <section>
-        <h2>{category}</h2>
+        <div class="category-header">{category}</div>
+        <div class="product-scroll-container">
         <div class="container">
+        </section>
 """)
             for p in products:
                 img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
@@ -213,6 +201,10 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
+
+
+
 
 
 
