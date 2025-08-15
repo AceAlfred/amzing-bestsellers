@@ -3,6 +3,10 @@ import re
 import time
 import requests
 from bs4 import BeautifulSoup
+import concurrent.futures
+from threading import Lock
+import json
+from datetime import datetime, timedelta
 
 # Define categories and their Amazon.se bestseller URLs
 CATEGORIES = {
@@ -24,31 +28,84 @@ HEADERS = {
                   '(KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
 }
 
-session = requests.Session()
-session.headers.update(HEADERS)
+# Create session pool for concurrent requests
+session_pool = []
+session_lock = Lock()
+CACHE_FILE = 'products_cache.json'
+CACHE_DURATION_HOURS = 2
+
+def get_session():
+    """Get a session from the pool or create a new one"""
+    with session_lock:
+        if session_pool:
+            return session_pool.pop()
+    
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    return session
+
+def return_session(session):
+    """Return session to pool for reuse"""
+    with session_lock:
+        if len(session_pool) < 5:  # Limit pool size
+            session_pool.append(session)
+
+def load_cache():
+    """Load cached products if they're still fresh"""
+    try:
+        if os.path.exists(CACHE_FILE):
+            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+                cache_data = json.load(f)
+                cache_time = datetime.fromisoformat(cache_data['timestamp'])
+                if datetime.now() - cache_time < timedelta(hours=CACHE_DURATION_HOURS):
+                    print(f"Using cached data from {cache_time}")
+                    return cache_data['products']
+    except Exception as e:
+        print(f"Cache load failed: {e}")
+    return None
+
+def save_cache(products_data):
+    """Save products to cache"""
+    try:
+        cache_data = {
+            'timestamp': datetime.now().isoformat(),
+            'products': products_data
+        }
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(cache_data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"Cache save failed: {e}")
 
 def get_top_asins(url, limit=12):
+    """Fetch top ASINs from category page with session pooling"""
+    session = get_session()
     try:
-        r = session.get(url, timeout=20)
+        r = session.get(url, timeout=15)
         r.raise_for_status()
     except Exception as e:
         print(f"Failed to fetch category page: {url}", e)
         return []
+    finally:
+        return_session(session)
 
     soup = BeautifulSoup(r.text, 'html.parser')
     asins = []
+    
+    # First, try to get ASINs from data-asin attributes
     for tag in soup.select('[data-asin]'):
         asin = tag.get('data-asin')
-        if asin and asin not in asins:
+        if asin and len(asin) == 10 and asin.isalnum() and asin not in asins:
             asins.append(asin)
         if len(asins) >= limit:
             break
 
+    # If not enough, extract from URLs
     if len(asins) < limit:
+        asin_pattern = re.compile(r'/dp/([A-Z0-9]{10})')
         for a in soup.find_all('a', href=True):
-            m = re.search(r'/dp/([A-Z0-9]{10})', a['href'])
-            if m:
-                asin = m.group(1)
+            match = asin_pattern.search(a['href'])
+            if match:
+                asin = match.group(1)
                 if asin not in asins:
                     asins.append(asin)
                 if len(asins) >= limit:
@@ -57,24 +114,93 @@ def get_top_asins(url, limit=12):
     return asins[:limit]
 
 def fetch_product_basic(asin):
+    """Fetch basic product info with session pooling and better error handling"""
+    session = get_session()
     url = f'https://www.amazon.se/dp/{asin}'
+    
     try:
-        r = session.get(url, timeout=20)
+        r = session.get(url, timeout=15)
         r.raise_for_status()
     except Exception as e:
-        print(f"Failed to fetch product page: {url}", e)
+        print(f"Failed to fetch product {asin}: {e}")
         return None
+    finally:
+        return_session(session)
 
     soup = BeautifulSoup(r.text, 'html.parser')
-    title_tag = soup.find(id='productTitle') or soup.find('span', class_='a-size-large')
-    title = title_tag.get_text(strip=True) if title_tag else asin
-    if 'gift card' in title.lower() or 'presentkort' in title.lower():
+    
+    # Get title with multiple fallbacks
+    title_selectors = [
+        '#productTitle',
+        'span.a-size-large',
+        'h1.a-size-large',
+        '.product-title'
+    ]
+    
+    title = asin  # Default fallback
+    for selector in title_selectors:
+        title_tag = soup.select_one(selector)
+        if title_tag:
+            title = title_tag.get_text(strip=True)
+            break
+    
+    # Skip gift cards
+    if any(term in title.lower() for term in ['gift card', 'presentkort', 'gavekort']):
         return None
+    
+    # Get image with multiple fallbacks
+    img_selectors = [
+        '#landingImage',
+        '#imgTagWrapperId img',
+        '.a-dynamic-image',
+        'img.a-dynamic-image'
+    ]
+    
     img = None
-    img_tag = soup.find(id='landingImage') or soup.select_one('#imgTagWrapperId img')
-    if img_tag and img_tag.get('src'):
-        img = img_tag['src']
-    return {'asin': asin, 'title': title, 'img': img, 'url': url}
+    for selector in img_selectors:
+        img_tag = soup.select_one(selector)
+        if img_tag and img_tag.get('src'):
+            img = img_tag['src']
+            # Ensure we get a decent quality image
+            if 'images-amazon.com' in img:
+                break
+    
+    return {
+        'asin': asin,
+        'title': title[:100],  # Limit title length
+        'img': img,
+        'url': url
+    }
+
+def process_category(category_data):
+    """Process a single category - for parallel execution"""
+    category, url = category_data
+    print(f"Processing category: {category}")
+    
+    asins = get_top_asins(url, limit=15)
+    if not asins:
+        print(f"No ASINs found for {category}")
+        return category, []
+    
+    products = []
+    
+    # Use ThreadPoolExecutor for concurrent product fetching
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_asin = {executor.submit(fetch_product_basic, asin): asin for asin in asins}
+        
+        for future in concurrent.futures.as_completed(future_to_asin):
+            try:
+                product_info = future.result(timeout=20)
+                if product_info:
+                    products.append(product_info)
+                if len(products) >= 12:
+                    break
+            except Exception as e:
+                asin = future_to_asin[future]
+                print(f"Product fetch failed for {asin}: {e}")
+    
+    print(f"Found {len(products)} products for {category}")
+    return category, products
 
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
@@ -322,7 +448,7 @@ header p {
 </head>
 <body>
     <header>
-        <h1>🏆Bästsäljare på Amazon</h1>
+        <h1>🏆 Bästsäljare på Amazon</h1>
         <p>Upptäck våra populäraste produkter baserat på försäljning. Uppdateras dagligen för att ge dig de hetaste trenderna.</p>
     </header>
 """)
@@ -357,19 +483,42 @@ header p {
 </html>""")
 
 if __name__ == '__main__':
-    products_by_category = {}
-    for category, url in CATEGORIES.items():
-        print(f"Processing category: {category}")
-        asins = get_top_asins(url, limit=15)
-        products = []
-        for asin in asins:
-            info = fetch_product_basic(asin)
-            if info:
-                products.append(info)
-            if len(products) >= 12:
-                break
-            time.sleep(1)
-        products_by_category[category] = products
+    start_time = time.time()
+    
+    # Try to load from cache first
+    cached_data = load_cache()
+    if cached_data:
+        products_by_category = cached_data
+        print("Using cached data - skipping web scraping")
+    else:
+        print("No valid cache found - starting fresh scraping")
+        products_by_category = {}
         
+        # Process categories in parallel
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+            future_to_category = {
+                executor.submit(process_category, (category, url)): category 
+                for category, url in CATEGORIES.items()
+            }
+            
+            for future in concurrent.futures.as_completed(future_to_category):
+                try:
+                    category, products = future.result(timeout=60)
+                    products_by_category[category] = products
+                except Exception as e:
+                    category = future_to_category[future]
+                    print(f"Category processing failed for {category}: {e}")
+                    products_by_category[category] = []
+        
+        # Save to cache
+        save_cache(products_by_category)
+    
+    # Generate HTML
     generate_html(products_by_category, 'index.html')
-    print('Wrote index.html with top 12 products per category.')
+    
+    elapsed_time = time.time() - start_time
+    total_products = sum(len(products) for products in products_by_category.values())
+    
+    print(f'\n✅ Completed in {elapsed_time:.1f} seconds')
+    print(f'📦 Generated index.html with {total_products} products across {len(products_by_category)} categories')
+    print(f'⚡ Average: {total_products/elapsed_time:.1f} products/second')
