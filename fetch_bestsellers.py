@@ -81,69 +81,74 @@ def build_affiliate_link(asin):
 
 def generate_html(products_by_category, out_path='index.html'):
     css_styles = """
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-    }
-    header {
-        background-color: #000;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-    }
-    .category-header {
-        background-color: #e0e0e0;
-        padding: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-    }
-    .product-scroll-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
-        padding: 10px;
-        scroll-snap-type: x mandatory;
-    }
-    .product-card {
-        flex: 0 0 auto;
-        width: 45vw;
-        max-width: 180px;
-        border: 2px solid #aaa;
-        border-radius: 10px;
-        scroll-snap-align: start;
-        background: #fff;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        overflow: hidden;
-    }
-    .product-card img {
-        display: block;
-        margin: auto;
-        width: 100%;
-        border-bottom: 1px solid #ddd;
-    }
-    .product-info {
-        padding: 10px;
-        border-top: 1px solid #ddd;
-    }
-    .product-info h3 {
-        font-size: 14px;
-        margin: 0 0 5px;
-    }
-    .product-info a {
-        text-decoration: none;
-        color: #333;
-    }
-    .product-scroll-container::-webkit-scrollbar {
-        display: none;
-    }
-    .product-scroll-container {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    """
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon.se Bestsellers</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.category-header {
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.product-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+.product-card {
+    flex: 0 0 auto;
+    width: 45vw;
+    max-width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    background: #fff;
+}
+.product-card img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+}
+.product-info {
+    padding: 10px;
+}
+.product-info h3 {
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+.product-info a {
+    text-decoration: none;
+    color: #333;
+}
+.product-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.product-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
+</head>
+</html>
+
+
+"""
 
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(f"""<!DOCTYPE html>
@@ -161,24 +166,25 @@ def generate_html(products_by_category, out_path='index.html'):
     </header>
 """)
         for category, products in products_by_category.items():
-            f.write(f"""<section>
-    <div class="category-header">{category}</div>
-    <div class="product-scroll-container">
+            f.write(f"""    <section>
+        <div class="category-header">{category}</div>
+        <div class="product-scroll-container">
+        <div class="container">
+        </section>
 """)
             for p in products:
                 img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
-                f.write(f"""<div class="product-card">
-    <a href="{build_affiliate_link(p['asin'])}" target="_blank">
-        {img_html}
-        <div class="product-info">
-            <h3>{p['title']}</h3>
-        </div>
-    </a>
-</div>
+                f.write(f"""            <div class="product">
+                <a href="{build_affiliate_link(p['asin'])}" target="_blank">
+                    {img_html}
+                    <h3>{p['title']}</h3>
+                </a>
+                <div class="price"></div>
+            </div>
 """)
-            f.write("    </div>\n</section>\n")
+        f.write("        </div>\n")
+        f.write("    </section>\n")
         f.write("</body>\n</html>")
-
 if __name__ == '__main__':
     products_by_category = {}
     for category, url in CATEGORIES.items():
@@ -195,14 +201,3 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
-
-
-
-
-
-
-
-
-
-
-
