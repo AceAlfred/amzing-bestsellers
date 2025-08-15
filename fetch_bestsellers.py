@@ -145,24 +145,6 @@ body {
 }
 </style>
 </head>
-<body>
-#<div class="category-header">Electronics</div>
-#<div class="product-scroll-container">
-#</div>
-#<div class="category-header">Books</div>
-#<div class="product-scroll-container">
-#</div>
-#<div class="category-header">Fashion</div>
-#<div class="product-scroll-container">
-#</div>
-#<div class="category-header">Home</div>
-#<div class="product-scroll-container">
-#</div>
-#<div class="category-header">Beauty</div>
-#<div class="product-scroll-container">
-#</div>
-
-</body>
 </html>
 
 
@@ -219,6 +201,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
