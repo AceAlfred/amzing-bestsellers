@@ -180,7 +180,7 @@ body {
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
-        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
     </header>
 """)
         for category, products in products_by_category.items():
@@ -217,6 +217,7 @@ if __name__ == '__main__':
         products_by_category[category] = products
     generate_html(products_by_category, 'index.html')
     print('Wrote index.html with top 12 products per category.')
+
 
 
 
