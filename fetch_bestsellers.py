@@ -1,8 +1,11 @@
 import os
 import re
 import time
-import requests
+import asyncio
+import aiohttp
 from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
+import functools
 
 # Define categories and their Amazon.se bestseller URLs
 CATEGORIES = {
@@ -24,19 +27,41 @@ HEADERS = {
                   '(KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
 }
 
-session = requests.Session()
-session.headers.update(HEADERS)
+# Async HTTP session
+async def create_session():
+    timeout = aiohttp.ClientTimeout(total=20)
+    connector = aiohttp.TCPConnector(limit=20, limit_per_host=5)  # Connection pooling
+    return aiohttp.ClientSession(
+        headers=HEADERS, 
+        timeout=timeout, 
+        connector=connector
+    )
 
-def get_top_asins(url, limit=12):
+async def get_top_asins(session, url, limit=12):
+    """Async version of get_top_asins"""
     try:
-        r = session.get(url, timeout=20)
-        r.raise_for_status()
+        async with session.get(url) as response:
+            if response.status != 200:
+                print(f"Failed to fetch category page: {url}, status: {response.status}")
+                return []
+            text = await response.text()
     except Exception as e:
         print(f"Failed to fetch category page: {url}", e)
         return []
 
-    soup = BeautifulSoup(r.text, 'html.parser')
+    # Use ThreadPoolExecutor for CPU-bound parsing
+    loop = asyncio.get_event_loop()
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        asins = await loop.run_in_executor(executor, parse_asins_from_html, text, limit)
+    
+    return asins
+
+def parse_asins_from_html(html_text, limit):
+    """Parse ASINs from HTML (CPU-bound, runs in thread pool)"""
+    soup = BeautifulSoup(html_text, 'html.parser')
     asins = []
+    
+    # First method: look for data-asin attributes
     for tag in soup.select('[data-asin]'):
         asin = tag.get('data-asin')
         if asin and asin not in asins:
@@ -44,6 +69,7 @@ def get_top_asins(url, limit=12):
         if len(asins) >= limit:
             break
 
+    # Second method: regex search in hrefs
     if len(asins) < limit:
         for a in soup.find_all('a', href=True):
             m = re.search(r'/dp/([A-Z0-9]{10})', a['href'])
@@ -56,25 +82,93 @@ def get_top_asins(url, limit=12):
 
     return asins[:limit]
 
-def fetch_product_basic(asin):
+async def fetch_product_basic(session, asin):
+    """Async version of fetch_product_basic"""
     url = f'https://www.amazon.se/dp/{asin}'
     try:
-        r = session.get(url, timeout=20)
-        r.raise_for_status()
+        async with session.get(url) as response:
+            if response.status != 200:
+                print(f"Failed to fetch product page: {url}, status: {response.status}")
+                return None
+            text = await response.text()
     except Exception as e:
         print(f"Failed to fetch product page: {url}", e)
         return None
 
-    soup = BeautifulSoup(r.text, 'html.parser')
-    title_tag = soup.find(id='productTitle') or soup.find('span', class_='a-size-large')
-    title = title_tag.get_text(strip=True) if title_tag else asin
-    if 'gift card' in title.lower() or 'presentkort' in title.lower():
+    # Use ThreadPoolExecutor for CPU-bound parsing
+    loop = asyncio.get_event_loop()
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        product_data = await loop.run_in_executor(
+            executor, parse_product_from_html, text, asin, url
+        )
+    
+    return product_data
+
+
+def parse_product_from_html(html):
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, 'html.parser')
+
+    # Try multiple selectors for title
+    title_tag = (
+        soup.find(id='productTitle') or
+        soup.find('span', class_='a-size-large') or
+        soup.find('h1') or
+        soup.select_one('span[data-asin-title]')
+    )
+    title = title_tag.get_text(strip=True) if title_tag and title_tag.get_text(strip=True) else None
+
+    # Try multiple selectors for image
+    img_tag = (
+        soup.find(id='landingImage') or
+        soup.select_one('#imgTagWrapperId img') or
+        soup.select_one('img[data-old-hires]') or
+        soup.select_one('img[src]')
+    )
+    img = img_tag['src'] if img_tag and img_tag.get('src') else None
+
+    # Return None if essential data is missing
+    if not title or not img:
         return None
+
+    return {'title': title, 'img': img}
+    
     img = None
     img_tag = soup.find(id='landingImage') or soup.select_one('#imgTagWrapperId img')
     if img_tag and img_tag.get('src'):
         img = img_tag['src']
+    
     return {'asin': asin, 'title': title, 'img': img, 'url': url}
+
+async def process_category(session, category, url, limit=12):
+    """Process a single category asynchronously"""
+    print(f"Processing category: {category}")
+    asins = await get_top_asins(session, url, limit=15)
+    
+    if not asins:
+        return category, []
+    
+    # Process products concurrently with controlled concurrency
+    semaphore = asyncio.Semaphore(5)  # Limit concurrent requests
+    
+    async def fetch_with_semaphore(asin):
+        async with semaphore:
+            return await fetch_product_basic(session, asin)
+    
+    # Fetch all products concurrently
+    tasks = [fetch_with_semaphore(asin) for asin in asins]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    # Filter successful results and limit to 12
+    products = []
+    for result in results:
+        if isinstance(result, dict) and result is not None:
+            products.append(result)
+        if len(products) >= limit:
+            break
+    
+    return category, products
 
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
@@ -187,19 +281,36 @@ header {
             f.write("        </div>\n    </section>\n")
         
         f.write("</body>\n</html>")
+
+async def main():
+    """Main async function"""
+    session = await create_session()
+    
+    try:
+        # Process all categories concurrently
+        tasks = [
+            process_category(session, category, url) 
+            for category, url in CATEGORIES.items()
+        ]
+        
+        # Execute all category processing concurrently
+        results = await asyncio.gather(*tasks)
+        
+        # Convert results to dictionary
+        products_by_category = dict(results)
+        
+        # Generate HTML
+        generate_html(products_by_category, 'index.html')
+        print('Wrote index.html with top 12 products per category.')
+        
+    finally:
+        await session.close()
+
 if __name__ == '__main__':
-    products_by_category = {}
-    for category, url in CATEGORIES.items():
-        print(f"Processing category: {category}")
-        asins = get_top_asins(url, limit=15)
-        products = []
-        for asin in asins:
-            info = fetch_product_basic(asin)
-            if info:
-                products.append(info)
-            if len(products) >= 12:
-                break
-            time.sleep(1)
-        products_by_category[category] = products
-    generate_html(products_by_category, 'index.html')
-    print('Wrote index.html with top 12 products per category.')
+    # Install required packages if not already installed:
+    # pip install aiohttp beautifulsoup4
+    
+    start_time = time.time()
+    asyncio.run(main())
+    end_time = time.time()
+    print(f"Execution completed in {end_time - start_time:.2f} seconds")
