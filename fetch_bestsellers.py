@@ -104,35 +104,16 @@ async def fetch_product_basic(session, asin):
     
     return product_data
 
-
-def parse_product_from_html(html):
-    from bs4 import BeautifulSoup
-
-    soup = BeautifulSoup(html, 'html.parser')
-
-    # Try multiple selectors for title
-    title_tag = (
-        soup.find(id='productTitle') or
-        soup.find('span', class_='a-size-large') or
-        soup.find('h1') or
-        soup.select_one('span[data-asin-title]')
-    )
-    title = title_tag.get_text(strip=True) if title_tag and title_tag.get_text(strip=True) else None
-
-    # Try multiple selectors for image
-    img_tag = (
-        soup.find(id='landingImage') or
-        soup.select_one('#imgTagWrapperId img') or
-        soup.select_one('img[data-old-hires]') or
-        soup.select_one('img[src]')
-    )
-    img = img_tag['src'] if img_tag and img_tag.get('src') else None
-
-    # Return None if essential data is missing
-    if not title or not img:
+def parse_product_from_html(html_text, asin, url):
+    """Parse product data from HTML (CPU-bound, runs in thread pool)"""
+    soup = BeautifulSoup(html_text, 'html.parser')
+    
+    title_tag = soup.find(id='productTitle') or soup.find('span', class_='a-size-large')
+    title = title_tag.get_text(strip=True) if title_tag else asin
+    
+    # Skip gift cards
+    if 'gift card' in title.lower() or 'presentkort' in title.lower():
         return None
-
-    return {'title': title, 'img': img}
     
     img = None
     img_tag = soup.find(id='landingImage') or soup.select_one('#imgTagWrapperId img')
