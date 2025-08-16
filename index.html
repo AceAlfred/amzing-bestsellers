@@ -5,1088 +5,960 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bästsäljare på Amazon</title>
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-header {
-    background-color: #232f3e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.category-header {
-    background-color: #e0e0e0;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-.product-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-}
-.product-card {
-    flex: 0 0 auto;
-    width: 45vw;
-    max-width: 180px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    scroll-snap-align: start;
-    background: #fff;
-}
-.product-card img {
-    display: block;
-    margin: auto;
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    border-bottom: 1px solid #ddd;
-}
-.product-info {
-    padding: 10px;
-}
-.product-info h3 {
-    font-size: 14px;
-    margin: 0 0 5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.product-info a {
-    text-decoration: none;
-    color: #333;
-}
-.product-info a:hover {
-    color: #0066c0;
-}
-.product-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-.product-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #ffffff;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    header p {
+        margin: 5px 0 0;
+        font-size: 1.1em;
+    }
+    section {
+        padding: 20px;
+        max-width: 1200px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    section h2 {
+        color: #000000;
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: #D3D3D3;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product {
+        background-color: #f9f9f9;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        margin: 10px;
+        padding: 15px;
+        width: 200px;
+        text-align: center;
+    }
+    .product img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .product h3 {
+        font-size: 1em;
+        margin: 0.5em 0;
+        color: #000000;
+    }
+    .product a {
+        text-decoration: none;
+        color: #000000;
+    }
+    .price {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #000000;
+    }
+    @media (max-width: 600px) {
+        .product {
+            width: 90%;
+        }
+        section {
+            padding: 10px;
+        }
+    }
 </style>
 </head>
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
-        <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
     </header>
     <section>
-        <div class="category-header">Beauty & Personal Care</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Beauty & Personal Care</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00763ABGC/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00763ABGC</h3>
-                    </div>
+                    <h3>B00763ABGC</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07CVJLB6H/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07CVJLB6H</h3>
-                    </div>
+                    <h3>B07CVJLB6H</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0BLGJHQLJ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0BLGJHQLJ</h3>
-                    </div>
+                    <h3>B0BLGJHQLJ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B013OPOLXO/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B013OPOLXO</h3>
-                    </div>
+                    <h3>B013OPOLXO</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00TH1ICEO/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00TH1ICEO</h3>
-                    </div>
+                    <h3>B00TH1ICEO</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08JW4QBSL/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08JW4QBSL</h3>
-                    </div>
+                    <h3>B08JW4QBSL</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0BV7M34VF/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0BV7M34VF</h3>
-                    </div>
+                    <h3>B0BV7M34VF</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CQHWV2QX/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CQHWV2QX</h3>
-                    </div>
+                    <h3>B0CQHWV2QX</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08KT2Z93D/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08KT2Z93D</h3>
-                    </div>
+                    <h3>B08KT2Z93D</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DK4Y2YP3/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DK4Y2YP3</h3>
-                    </div>
+                    <h3>B0DK4Y2YP3</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CC6KWFJZ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CC6KWFJZ</h3>
-                    </div>
+                    <h3>B0CC6KWFJZ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B01KLXFBVI/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/717JDoe3nkL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140'>
-                    <div class="product-info">
-                        <h3>Remington hårfön, 2400W AC-motor, 3 stylingmunstycken, jongenerator, 3 värme och hastighetsinställningar, kalluftsfunktion, turbo för extra kraft, 3m sladd, PROluxe AC9140</h3>
-                    </div>
+                    
+                    <h3>B01KLXFBVI</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Home & Kitchen</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Home & Kitchen</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CMPXJB1B/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CMPXJB1B</h3>
-                    </div>
+                    <h3>B0CMPXJB1B</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08NDVTN5C/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08NDVTN5C</h3>
-                    </div>
+                    <h3>B08NDVTN5C</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B01N9XBDTI/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B01N9XBDTI</h3>
-                    </div>
+                    <h3>B01N9XBDTI</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07TQLQDQT/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07TQLQDQT</h3>
-                    </div>
+                    <h3>B07TQLQDQT</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07WKKS4HB/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07WKKS4HB</h3>
-                    </div>
+                    <h3>B07WKKS4HB</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07M8J529S/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07M8J529S</h3>
-                    </div>
+                    <h3>B07M8J529S</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0BVRFSY79/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0BVRFSY79</h3>
-                    </div>
+                    <h3>B0BVRFSY79</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07G58SR4W/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07G58SR4W</h3>
-                    </div>
+                    <h3>B07G58SR4W</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D6XRMT73/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0D6XRMT73</h3>
-                    </div>
+                    <h3>B0D6XRMT73</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B088XC6VBZ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B088XC6VBZ</h3>
-                    </div>
+                    <h3>B088XC6VBZ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0BF9W3WC4/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0BF9W3WC4</h3>
-                    </div>
+                    <h3>B0BF9W3WC4</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09PMKYLK4/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09PMKYLK4</h3>
-                    </div>
+                    <h3>B09PMKYLK4</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Clothing, Shoes & Jewelry</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Clothing, Shoes & Jewelry</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D9QCX786/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B0D9QCX786</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/71rfL7cFzdL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)'>
+                    <h3>Resväskearrangör, packkuber, resväskorganiseringsset 10 delar, bagageorganisatör vattentät, packkuber, med packpåsar, klädväskor, kosmetikväska, skoväska, arrangör resväska (beige)</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07G76RDFS/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07G76RDFS</h3>
-                    </div>
+                    <h3>B07G76RDFS</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DSG2M1X4/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DSG2M1X4</h3>
-                    </div>
+                    <h3>B0DSG2M1X4</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DH3CZXNS/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DH3CZXNS</h3>
-                    </div>
+                    <h3>B0DH3CZXNS</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0872X4FLY/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0872X4FLY</h3>
-                    </div>
+                    <h3>B0872X4FLY</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08MQBKVD6/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08MQBKVD6</h3>
-                    </div>
+                    <h3>B08MQBKVD6</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B001BEAWZM/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B001BEAWZM</h3>
-                    </div>
+                    <h3>B001BEAWZM</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09JZJR8XH/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09JZJR8XH</h3>
-                    </div>
+                    <h3>B09JZJR8XH</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07VRZTTP1/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07VRZTTP1</h3>
-                    </div>
+                    <h3>B07VRZTTP1</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B087JGF2MK/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B087JGF2MK</h3>
-                    </div>
+                    <h3>B087JGF2MK</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07DTMG6MH/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07DTMG6MH</h3>
-                    </div>
+                    <h3>B07DTMG6MH</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00UC151LU/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00UC151LU</h3>
-                    </div>
+                    <h3>B00UC151LU</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Electronics</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Electronics</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09MQ4KZ27/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09MQ4KZ27</h3>
-                    </div>
+                    <h3>B09MQ4KZ27</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0000C73CQ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0000C73CQ</h3>
-                    </div>
+                    <h3>B0000C73CQ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B7NTY2S6/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B7NTY2S6</h3>
-                    </div>
+                    <h3>B0B7NTY2S6</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00019RA8U/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00019RA8U</h3>
-                    </div>
+                    <h3>B00019RA8U</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B2Q2QHGW/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B2Q2QHGW</h3>
-                    </div>
+                    <h3>B0B2Q2QHGW</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B2PZ994V/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B2PZ994V</h3>
-                    </div>
+                    <h3>B0B2PZ994V</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B9C4DKKG/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B9C4DKKG</h3>
-                    </div>
+                    <h3>B0B9C4DKKG</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B1JNDZ5J/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B1JNDZ5J</h3>
-                    </div>
+                    <h3>B0B1JNDZ5J</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08VD632WJ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08VD632WJ</h3>
-                    </div>
+                    <h3>B08VD632WJ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09F3P3DQD/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09F3P3DQD</h3>
-                    </div>
+                    <h3>B09F3P3DQD</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08VJ2VH2J/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08VJ2VH2J</h3>
-                    </div>
+                    <h3>B08VJ2VH2J</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DSHBM2PS/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DSHBM2PS</h3>
-                    </div>
+                    <h3>B0DSHBM2PS</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Toys & Games</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Toys & Games</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DHSBBV6R/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DHSBBV6R</h3>
-                    </div>
+                    <h3>B0DHSBBV6R</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07NBR59QV/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07NBR59QV</h3>
-                    </div>
+                    <h3>B07NBR59QV</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00ZRD99C0/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00ZRD99C0</h3>
-                    </div>
+                    <h3>B00ZRD99C0</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CPN359F7/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CPN359F7</h3>
-                    </div>
+                    <h3>B0CPN359F7</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B005I5M2F8/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B005I5M2F8</h3>
-                    </div>
+                    <h3>B005I5M2F8</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D223H58T/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0D223H58T</h3>
-                    </div>
+                    <h3>B0D223H58T</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CPFRVL3T/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CPFRVL3T</h3>
-                    </div>
+                    <h3>B0CPFRVL3T</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CNGY3FBY/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CNGY3FBY</h3>
-                    </div>
+                    <h3>B0CNGY3FBY</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DWX7K4XZ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DWX7K4XZ</h3>
-                    </div>
+                    <h3>B0DWX7K4XZ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DHSJ9G9N/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DHSJ9G9N</h3>
-                    </div>
+                    <h3>B0DHSJ9G9N</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DWDRZQYB/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DWDRZQYB</h3>
-                    </div>
+                    <h3>B0DWDRZQYB</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B28G8W15/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B28G8W15</h3>
-                    </div>
+                    <h3>B0B28G8W15</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Books</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Books</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349439257/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0349439257</h3>
-                    </div>
+                    <h3>0349439257</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D4YLQRMP/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0D4YLQRMP</h3>
-                    </div>
+                    <h3>B0D4YLQRMP</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349439273/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0349439273</h3>
-                    </div>
+                    <h3>0349439273</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/1529380944/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>1529380944</h3>
-                    </div>
+                    <h3>1529380944</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/1529381002/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>1529381002</h3>
-                    </div>
+                    <h3>1529381002</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/1529399327/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>1529399327</h3>
-                    </div>
+                    <h3>1529399327</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349439303/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0349439303</h3>
-                    </div>
+                    <h3>0349439303</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349439281/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0349439281</h3>
-                    </div>
+                    <h3>0349439281</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349437076/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0349437076</h3>
-                    </div>
+                    <h3>0349437076</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D55MQN2R/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0D55MQN2R</h3>
-                    </div>
+                    <h3>B0D55MQN2R</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0241764203/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>0241764203</h3>
-                    </div>
+                    <h3>0241764203</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/0349439354/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/5147WcMxN3L._SY445_SX342_.jpg' alt='Taming 7'>
-                    <div class="product-info">
-                        <h3>Taming 7</h3>
-                    </div>
+                    
+                    <h3>0349439354</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Sports & Outdoors</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Sports & Outdoors</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CF1G56CR/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CF1G56CR</h3>
-                    </div>
+                    <h3>B0CF1G56CR</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07QCDZJY8/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07QCDZJY8</h3>
-                    </div>
+                    <h3>B07QCDZJY8</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C3YMHJ3R/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C3YMHJ3R</h3>
-                    </div>
+                    <h3>B0C3YMHJ3R</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B089KRZSVR/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B089KRZSVR</h3>
-                    </div>
+                    <h3>B089KRZSVR</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CHN3W617/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CHN3W617</h3>
-                    </div>
+                    <h3>B0CHN3W617</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C38XWJ5C/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C38XWJ5C</h3>
-                    </div>
+                    <h3>B0C38XWJ5C</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DH8HYL4K/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B0DH8HYL4K</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/71tSnoV2KKL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader'>
+                    <h3>PORTENTUM Sportig löpande midjeväska - Bälte Löpning för kvinnor och män - Mobiltelefonhållare för löpning (alla smartphones) - promenader</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B009SLTSF0/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B009SLTSF0</h3>
-                    </div>
+                    <h3>B009SLTSF0</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CBPHGWJ2/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B0CBPHGWJ2</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/71cEdbO4RdL.__AC_SY445_SX342_QL70_ML2_.jpg' alt='Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc'>
+                    <h3>Blukar Pannlampa Uppladdningsbar, Superljus LED Strålkastare med Sensorkontroll och Röda Lampor, 8 Ljuslägen, Vattentät, Lång Batteritid för Camping, Löpning, Cykel etc</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B945VBJJ/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71PBYgXx6bL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm marinblå)'>
-                    <div class="product-info">
-                        <h3>Fit-Flip microfiber handduk - kompakt, ultralätt och snabbtorkande microfiberduk – en perfekt resehandduk, sporthandduk och strandhanduk – handdukar för camping (70x140cm marinblå)</h3>
-                    </div>
+                    
+                    <h3>B0B945VBJJ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07BLLSVK7/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/71EOk1W5sFL.__AC_SY300_SX300_QL70_ML2_.jpg' alt='Super Sparrow Sport Vattenflaska - 350ml & 500ml & 750ml & 1000ml & 1.5l - Giftfri BPA-Fri och Miljövänlig Tritan Co-polyesterplast - för Löpning, Gym, Yoga, Utomhus och Camping'>
-                    <div class="product-info">
-                        <h3>Super Sparrow Sport Vattenflaska - 350ml & 500ml & 750ml & 1000ml & 1.5l - Giftfri BPA-Fri och Miljövänlig Tritan Co-polyesterplast - för Löpning, Gym, Yoga, Utomhus och Camping</h3>
-                    </div>
+                    
+                    <h3>B07BLLSVK7</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C3C4P4V5/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C3C4P4V5</h3>
-                    </div>
+                    <h3>B0C3C4P4V5</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Health & Household</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Health & Household</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0D6NDQ9NQ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0D6NDQ9NQ</h3>
-                    </div>
+                    <h3>B0D6NDQ9NQ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09JS56L1T/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09JS56L1T</h3>
-                    </div>
+                    <h3>B09JS56L1T</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0B4SCYCLS/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0B4SCYCLS</h3>
-                    </div>
+                    <h3>B0B4SCYCLS</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07S9PTLNZ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07S9PTLNZ</h3>
-                    </div>
+                    <h3>B07S9PTLNZ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08KYXNCSY/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08KYXNCSY</h3>
-                    </div>
+                    <h3>B08KYXNCSY</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00RCK2JAU/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B00RCK2JAU</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/71H7IUqnonL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000'>
+                    <h3>20 stycken professionella borsthuvuden kompatibla med Oral B eltandborstar, reservhuvuden för Pro 500/1000/1500/3000/3757/5000/7000/7500/8000</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07D4N472Q/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07D4N472Q</h3>
-                    </div>
+                    <h3>B07D4N472Q</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08TNTX1XK/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08TNTX1XK</h3>
-                    </div>
+                    <h3>B08TNTX1XK</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B08371ZSDB/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B08371ZSDB</h3>
-                    </div>
+                    <h3>B08371ZSDB</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C78FCZGQ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C78FCZGQ</h3>
-                    </div>
+                    <h3>B0C78FCZGQ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DF7YK49G/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B0DF7YK49G</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/51YUs8HP2tL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='Magic Gel 2 st heta och kalla benpaket för benhinneinflammation | flexibla kylklampar för bensmärta och inflammation | Återanvändbar terapigel för löpare och idrottare | varm och kall terapi för'>
+                    <h3>Magic Gel 2 st heta och kalla benpaket för benhinneinflammation | flexibla kylklampar för bensmärta och inflammation | Återanvändbar terapigel för löpare och idrottare | varm och kall terapi för</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CN117XW3/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CN117XW3</h3>
-                    </div>
+                    <h3>B0CN117XW3</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Tools & Home Improvement</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Tools & Home Improvement</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CHR9X8SJ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CHR9X8SJ</h3>
-                    </div>
+                    <h3>B0CHR9X8SJ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CR1DBBFN/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41Lmi5mwMGL._SY445_SX342_QL70_ML2_.jpg' alt='eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart'>
-                    <div class="product-info">
-                        <h3>eSUN PLA-Filament 1,75 mm, PLA Basic 3D-Skrivarfilament Dimensionell Noggrannhet +/- 0.05 mm, 1KG Spole (2,2 LBS) Snabb PLA-Filament för 3D-Skrivare，Svart</h3>
-                    </div>
+                    
+                    <h3>B0CR1DBBFN</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07GC5T84Z/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07GC5T84Z</h3>
-                    </div>
+                    <h3>B07GC5T84Z</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C9HRB1M5/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C9HRB1M5</h3>
-                    </div>
+                    <h3>B0C9HRB1M5</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09M8PFRWP/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09M8PFRWP</h3>
-                    </div>
+                    <h3>B09M8PFRWP</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07FQDKR28/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/61kT6QXpbFL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart'>
-                    <div class="product-info">
-                        <h3>eSUN PLA+ Filament 1.75mm, Förbättrad Seghet PLA Plus 3D-skrivarfilament, Dimensionell Noggrannhet +/- 0.03mm, 1KG Spole (2.2 LBS) 3D-tryckmaterial för 3D-skrivare, Svart</h3>
-                    </div>
+                    
+                    <h3>B07FQDKR28</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B06X977K8L/?tag=amzing2025-21" target="_blank">
-                    <img src='https://m.media-amazon.com/images/I/41j6AYLIu7L._SY445_SX342_QL70_ML2_.jpg' alt='Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft'>
-                    <div class="product-info">
-                        <h3>Magenesis 52 stycken neodymmagneter skivform10x2 mm extremt kraftfulla, ca 2 kg vidhäftningskraft</h3>
-                    </div>
+                    
+                    <h3>B06X977K8L</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CJ621Q1R/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CJ621Q1R</h3>
-                    </div>
+                    <h3>B0CJ621Q1R</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C6236N65/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0C6236N65</h3>
-                    </div>
+                    <h3>B0C6236N65</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DGX998KX/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DGX998KX</h3>
-                    </div>
+                    <h3>B0DGX998KX</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0DJQWXVK7/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0DJQWXVK7</h3>
-                    </div>
+                    <h3>B0DJQWXVK7</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0CC1Y6SK1/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0CC1Y6SK1</h3>
-                    </div>
+                    <h3>B0CC1Y6SK1</h3>
                 </a>
+                <div class="price"></div>
             </div>
-        </div>
-    </section>
     <section>
-        <div class="category-header">Pet Supplies</div>
-        <div class="product-scroll-container">
-            <div class="product-card">
+        <h2>Pet Supplies</h2>
+        <div class="container">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B07CPK4T22/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B07CPK4T22</h3>
-                    </div>
+                    <h3>B07CPK4T22</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0C1GG17WR/?tag=amzing2025-21" target="_blank">
-                    
-                    <div class="product-info">
-                        <h3>B0C1GG17WR</h3>
-                    </div>
+                    <img src='https://m.media-amazon.com/images/I/712YUZ0acyL.__AC_SX300_SY300_QL70_ML2_.jpg' alt='AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)'>
+                    <h3>AiTodos® 600 st Hundbajspåsar, 5 Färger, Lämplig för Utomhusbruk, Hundbajspåsar - 32 x 22,5 cm, Polyetenmaterial, Svart, Blå, Rosa, Gul, Grön (40 Rullar, 15 per Rulle)</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0819XVK92/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0819XVK92</h3>
-                    </div>
+                    <h3>B0819XVK92</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B073V4SRBZ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B073V4SRBZ</h3>
-                    </div>
+                    <h3>B073V4SRBZ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0BPD587DQ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0BPD587DQ</h3>
-                    </div>
+                    <h3>B0BPD587DQ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B001N03TAY/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B001N03TAY</h3>
-                    </div>
+                    <h3>B001N03TAY</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0009585SA/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0009585SA</h3>
-                    </div>
+                    <h3>B0009585SA</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B01MROLYGF/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B01MROLYGF</h3>
-                    </div>
+                    <h3>B01MROLYGF</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B00U7LCKZ0/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B00U7LCKZ0</h3>
-                    </div>
+                    <h3>B00U7LCKZ0</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B0079F3ICQ/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B0079F3ICQ</h3>
-                    </div>
+                    <h3>B0079F3ICQ</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B000LXUWN6/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B000LXUWN6</h3>
-                    </div>
+                    <h3>B000LXUWN6</h3>
                 </a>
+                <div class="price"></div>
             </div>
-            <div class="product-card">
+            <div class="product">
                 <a href="https://www.amazon.se/dp/B09DPP6P8X/?tag=amzing2025-21" target="_blank">
                     
-                    <div class="product-info">
-                        <h3>B09DPP6P8X</h3>
-                    </div>
+                    <h3>B09DPP6P8X</h3>
                 </a>
+                <div class="price"></div>
             </div>
         </div>
     </section>

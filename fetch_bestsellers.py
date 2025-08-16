@@ -1,11 +1,8 @@
 import os
 import re
 import time
-import asyncio
-import aiohttp
+import requests
 from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor
-import functools
 
 # Define categories and their Amazon.se bestseller URLs
 CATEGORIES = {
@@ -27,41 +24,19 @@ HEADERS = {
                   '(KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
 }
 
-# Async HTTP session
-async def create_session():
-    timeout = aiohttp.ClientTimeout(total=20)
-    connector = aiohttp.TCPConnector(limit=20, limit_per_host=5)  # Connection pooling
-    return aiohttp.ClientSession(
-        headers=HEADERS, 
-        timeout=timeout, 
-        connector=connector
-    )
+session = requests.Session()
+session.headers.update(HEADERS)
 
-async def get_top_asins(session, url, limit=12):
-    """Async version of get_top_asins"""
+def get_top_asins(url, limit=12):
     try:
-        async with session.get(url) as response:
-            if response.status != 200:
-                print(f"Failed to fetch category page: {url}, status: {response.status}")
-                return []
-            text = await response.text()
+        r = session.get(url, timeout=20)
+        r.raise_for_status()
     except Exception as e:
         print(f"Failed to fetch category page: {url}", e)
         return []
 
-    # Use ThreadPoolExecutor for CPU-bound parsing
-    loop = asyncio.get_event_loop()
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        asins = await loop.run_in_executor(executor, parse_asins_from_html, text, limit)
-    
-    return asins
-
-def parse_asins_from_html(html_text, limit):
-    """Parse ASINs from HTML (CPU-bound, runs in thread pool)"""
-    soup = BeautifulSoup(html_text, 'html.parser')
+    soup = BeautifulSoup(r.text, 'html.parser')
     asins = []
-    
-    # First method: look for data-asin attributes
     for tag in soup.select('[data-asin]'):
         asin = tag.get('data-asin')
         if asin and asin not in asins:
@@ -69,7 +44,6 @@ def parse_asins_from_html(html_text, limit):
         if len(asins) >= limit:
             break
 
-    # Second method: regex search in hrefs
     if len(asins) < limit:
         for a in soup.find_all('a', href=True):
             m = re.search(r'/dp/([A-Z0-9]{10})', a['href'])
@@ -82,149 +56,109 @@ def parse_asins_from_html(html_text, limit):
 
     return asins[:limit]
 
-async def fetch_product_basic(session, asin):
-    """Async version of fetch_product_basic"""
+def fetch_product_basic(asin):
     url = f'https://www.amazon.se/dp/{asin}'
     try:
-        async with session.get(url) as response:
-            if response.status != 200:
-                print(f"Failed to fetch product page: {url}, status: {response.status}")
-                return None
-            text = await response.text()
+        r = session.get(url, timeout=20)
+        r.raise_for_status()
     except Exception as e:
         print(f"Failed to fetch product page: {url}", e)
         return None
 
-    # Use ThreadPoolExecutor for CPU-bound parsing
-    loop = asyncio.get_event_loop()
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        product_data = await loop.run_in_executor(
-            executor, parse_product_from_html, text, asin, url
-        )
-    
-    return product_data
-
-def parse_product_from_html(html_text, asin, url):
-    """Parse product data from HTML (CPU-bound, runs in thread pool)"""
-    soup = BeautifulSoup(html_text, 'html.parser')
-    
+    soup = BeautifulSoup(r.text, 'html.parser')
     title_tag = soup.find(id='productTitle') or soup.find('span', class_='a-size-large')
     title = title_tag.get_text(strip=True) if title_tag else asin
-    
-    # Skip gift cards
     if 'gift card' in title.lower() or 'presentkort' in title.lower():
         return None
-    
     img = None
     img_tag = soup.find(id='landingImage') or soup.select_one('#imgTagWrapperId img')
     if img_tag and img_tag.get('src'):
         img = img_tag['src']
-    
     return {'asin': asin, 'title': title, 'img': img, 'url': url}
-
-async def process_category(session, category, url, limit=12):
-    """Process a single category asynchronously"""
-    print(f"Processing category: {category}")
-    asins = await get_top_asins(session, url, limit=15)
-    
-    if not asins:
-        return category, []
-    
-    # Process products concurrently with controlled concurrency
-    semaphore = asyncio.Semaphore(5)  # Limit concurrent requests
-    
-    async def fetch_with_semaphore(asin):
-        async with semaphore:
-            return await fetch_product_basic(session, asin)
-    
-    # Fetch all products concurrently
-    tasks = [fetch_with_semaphore(asin) for asin in asins]
-    results = await asyncio.gather(*tasks, return_exceptions=True)
-    
-    # Filter successful results and limit to 12
-    products = []
-    for result in results:
-        if isinstance(result, dict) and result is not None:
-            products.append(result)
-        if len(products) >= limit:
-            break
-    
-    return category, products
 
 def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
 def generate_html(products_by_category, out_path='index.html'):
-    """Generate HTML file (fixed the malformed HTML structure)"""
     css_styles = """
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
-header {
-    background-color: #232f3e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.category-header {
-    background-color: #e0e0e0;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-.product-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-}
-.product-card {
-    flex: 0 0 auto;
-    width: 45vw;
-    max-width: 180px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    scroll-snap-align: start;
-    background: #fff;
-}
-.product-card img {
-    display: block;
-    margin: auto;
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    border-bottom: 1px solid #ddd;
-}
-.product-info {
-    padding: 10px;
-}
-.product-info h3 {
-    font-size: 14px;
-    margin: 0 0 5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.product-info a {
-    text-decoration: none;
-    color: #333;
-}
-.product-info a:hover {
-    color: #0066c0;
-}
-.product-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-.product-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #ffffff;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    header p {
+        margin: 5px 0 0;
+        font-size: 1.1em;
+    }
+    section {
+        padding: 20px;
+        max-width: 1200px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    section h2 {
+        color: #000000;
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: #D3D3D3;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product {
+        background-color: #f9f9f9;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        margin: 10px;
+        padding: 15px;
+        width: 200px;
+        text-align: center;
+    }
+    .product img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .product h3 {
+        font-size: 1em;
+        margin: 0.5em 0;
+        color: #000000;
+    }
+    .product a {
+        text-decoration: none;
+        color: #000000;
+    }
+    .price {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #000000;
+    }
+    @media (max-width: 600px) {
+        .product {
+            width: 90%;
+        }
+        section {
+            padding: 10px;
+        }
+    }
 """
 
     with open(out_path, 'w', encoding='utf-8') as f:
@@ -239,59 +173,40 @@ header {
 <body>
     <header>
         <h1>Bästsäljare på Amazon</h1>
-        <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
+        <p>Våra populäraste produkter baserat på försäljning. Uppdateras ofta.</p>
     </header>
 """)
-        
         for category, products in products_by_category.items():
             f.write(f"""    <section>
-        <div class="category-header">{category}</div>
-        <div class="product-scroll-container">
+        <h2>{category}</h2>
+        <div class="container">
 """)
             for p in products:
                 img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
-                f.write(f"""            <div class="product-card">
+                f.write(f"""            <div class="product">
                 <a href="{build_affiliate_link(p['asin'])}" target="_blank">
                     {img_html}
-                    <div class="product-info">
-                        <h3>{p['title']}</h3>
-                    </div>
+                    <h3>{p['title']}</h3>
                 </a>
+                <div class="price"></div>
             </div>
 """)
-            f.write("        </div>\n    </section>\n")
-        
+        f.write("        </div>\n")
+        f.write("    </section>\n")
         f.write("</body>\n</html>")
-
-async def main():
-    """Main async function"""
-    session = await create_session()
-    
-    try:
-        # Process all categories concurrently
-        tasks = [
-            process_category(session, category, url) 
-            for category, url in CATEGORIES.items()
-        ]
-        
-        # Execute all category processing concurrently
-        results = await asyncio.gather(*tasks)
-        
-        # Convert results to dictionary
-        products_by_category = dict(results)
-        
-        # Generate HTML
-        generate_html(products_by_category, 'index.html')
-        print('Wrote index.html with top 12 products per category.')
-        
-    finally:
-        await session.close()
-
 if __name__ == '__main__':
-    # Install required packages if not already installed:
-    # pip install aiohttp beautifulsoup4
-    
-    start_time = time.time()
-    asyncio.run(main())
-    end_time = time.time()
-    print(f"Execution completed in {end_time - start_time:.2f} seconds")
+    products_by_category = {}
+    for category, url in CATEGORIES.items():
+        print(f"Processing category: {category}")
+        asins = get_top_asins(url, limit=15)
+        products = []
+        for asin in asins:
+            info = fetch_product_basic(asin)
+            if info:
+                products.append(info)
+            if len(products) >= 12:
+                break
+            time.sleep(1)
+        products_by_category[category] = products
+    generate_html(products_by_category, 'index.html')
+    print('Wrote index.html with top 12 products per category.')
