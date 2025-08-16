@@ -80,20 +80,19 @@ def build_affiliate_link(asin):
     return f'https://www.amazon.se/dp/{asin}/?tag={ASSOCIATE_TAG}'
 
 def generate_html(products_by_category, out_path='index.html'):
+    """Generate HTML file (fixed the malformed HTML structure)"""
     css_styles = """
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon.se Bestsellers</title>
-<style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+}
+header {
+    background-color: #232f3e;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 .category-header {
     background-color: #e0e0e0;
@@ -121,9 +120,9 @@ body {
     display: block;
     margin: auto;
     width: 100%;
+    height: 150px;
+    object-fit: contain;
     border-bottom: 1px solid #ddd;
-}
-
 }
 .product-info {
     padding: 10px;
@@ -131,10 +130,18 @@ body {
 .product-info h3 {
     font-size: 14px;
     margin: 0 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .product-info a {
     text-decoration: none;
     color: #333;
+}
+.product-info a:hover {
+    color: #0066c0;
 }
 .product-scroll-container::-webkit-scrollbar {
     display: none;
@@ -143,11 +150,6 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-</style>
-</head>
-</html>
-
-
 """
 
     with open(out_path, 'w', encoding='utf-8') as f:
@@ -165,25 +167,25 @@ body {
         <p>Våra populäraste produkter baserat på försäljning. Uppdateras dagligen.</p>
     </header>
 """)
+        
         for category, products in products_by_category.items():
             f.write(f"""    <section>
         <div class="category-header">{category}</div>
         <div class="product-scroll-container">
-        <div class="container">
-        </section>
 """)
             for p in products:
                 img_html = f"<img src='{p['img']}' alt='{p['title']}'>" if p['img'] else ""
-                f.write(f"""            <div class="product">
+                f.write(f"""            <div class="product-card">
                 <a href="{build_affiliate_link(p['asin'])}" target="_blank">
                     {img_html}
-                    <h3>{p['title']}</h3>
+                    <div class="product-info">
+                        <h3>{p['title']}</h3>
+                    </div>
                 </a>
-                <div class="price"></div>
             </div>
 """)
-        f.write("        </div>\n")
-        f.write("    </section>\n")
+            f.write("        </div>\n    </section>\n")
+        
         f.write("</body>\n</html>")
 if __name__ == '__main__':
     products_by_category = {}
