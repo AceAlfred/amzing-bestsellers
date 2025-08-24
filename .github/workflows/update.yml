@@ -2,7 +2,11 @@ name: Update Amazon Bestsellers
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # run daily at 08:00 UTC
+    # Run at 08:00 UTC Monday–Saturday
+    - cron: '0 8 * * 1-6'
+
+    # Run at 18:00 UTC on Sundays
+    - cron: '0 18 * * 0'
   workflow_dispatch: {}
 
 jobs:
